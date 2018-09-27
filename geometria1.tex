@@ -1,0 +1,87 @@
+\documentclass[a4paper]{article}
+
+\usepackage{bold-extra}
+\usepackage[T1]{fontenc}
+
+%\usepackage[medium]{titlesec} % Smaller section's font
+%\usepackage{parskip} % To avoid indentation
+\usepackage{indentfirst}
+\usepackage{textcomp} % To have \textcelsius and other symbols
+\usepackage[format=hang, labelformat=parens]{caption}
+\usepackage{etoolbox}
+\usepackage[showframe=false, top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+
+\usepackage[pdftex,
+pdfauthor={Davide Cossu},
+pdftitle={Geometria 1},
+pdfsubject={Matematica},
+pdfkeywords={matematica, formulario, formule},
+pdfproducer={LaTeX with hyperref},
+pdfcreator={pdflatex with hyperref}]{hyperref}
+\hypersetup{%
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=blue,
+  urlcolor=black
+}
+\usepackage[all]{hypcap} % To fix caption loading of hyperref
+
+%\setcounter{secnumdepth}{0} % sections are level 1
+\setcounter{tocdepth}{3}
+
+% For better visual in tables
+%\renewcommand*{\arraystretch}{2.5}
+
+\input{plot-snippets.tex}
+\input{util-snippets.tex}
+
+\input{teoremi.tex}
+\input{definizioni.tex}
+
+\newcommand{\innerDefautorefname}{Definizione}
+\newcommand{\innerThmautorefname}{Teorema}
+\newcommand{\innerSubDefautorefname}{Definizione}
+\newcommand{\innerSubThmautorefname}{Teorema}
+
+\newcommand{\envargument}{}
+\newenvironment{Def}[1]
+ {\renewcommand{\envargument}{#1}\innerDef}
+ {\endinnerDef}
+\newenvironment{SubDef}[1]
+ {\renewcommand{\envargument}{#1}\innerSubDef}
+ {\endinnerSubDef}
+
+\newcommand{\envargumenta}{}
+\newenvironment{Thm}[1]
+ {\renewcommand{\envargumenta}{#1}\innerThm}
+ {\endinnerThm}
+\newenvironment{SubThm}[1]
+ {\renewcommand{\envargumenta}{#1}\innerSubThm}
+ {\endinnerSubThm}
+
+\begin{document}
+
+\title{Geometria 1: appunti}
+\author{Davide Cossu}
+\date{2018}
+\maketitle
+
+\begin{abstract}
+  Una dispensa contenente gli appunti delle lezioni di Geometria 1, con anche esempi e
+  dimostrazioni.
+\end{abstract}
+
+{%
+  \newpage
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+  \newpage
+}
+
+\input{matrici.tex}
+\input{eqLineari.tex}
+
+\newpage
+\listoftodos[Note]
+\end{document}
