@@ -219,7 +219,7 @@ Spesso una matrice viene definita anche in maniera più stringata
   \end{enumerate}
 \end{Def}
 
-\begin{Def}{Somma}
+\begin{Def}{Somma}\label{def:matrice_somma}
   La somma tra matrici è solo definita se le due matrici appartengono allo stesso
   insieme.\\
   Siano $A=(a_{ij})\in\mathbb{R}^{m,n}$ e $B=(b_{ij})\in\mathbb{R}^{m,n}$ due matrici.
@@ -244,7 +244,7 @@ Spesso una matrice viene definita anche in maniera più stringata
   \end{enumerate}
 \end{SubDef}
 
-\begin{Def}{Prodotto tra matrice e scalare}
+\begin{Def}{Prodotto tra matrice e scalare}\label{def:matrice_prodotto_scalare}
   Si definisce il prodotto tra $\lambda\in\mathbb{R}$ e $A=(a_{ij})\in\mathbb{R}^{m,n}$
   la matrice
   \begin{equation*}
@@ -289,17 +289,62 @@ Spesso una matrice viene definita anche in maniera più stringata
   \begin{enumerate}
     \item Associativa: $(AB)C = A(BC)\quad\forall A\in\mathbb{R}^{m,n},
       B\in\mathbb{R}^{n,k},C\in\mathbb{R}^{k,q}$
+      \begin{proof}
+        Definiamo $D = AB\in\mathbb{R}^{m,k} = (d_{ij}) = \sum^{n}_{l=1} a_{il}b_{li}$ e
+        $E = BC\in\mathbb{R}^{n,q} = (e_{ij}) = \sum^{k}_{p=1} b_{ip}c_{pi}$. Allora
+        svolgiamo i calcoli
+        \begin{equation*}
+          (AB)C= DC = \sum^{q}_{f=1} d_{if}c_{fi} = \sum^{q}_{f=1} (a_{if}b_{fi})c_{fi}
+        \end{equation*}
+        e
+        \begin{equation*}
+          A(BC) = AE = \sum^{n}_{f=1} a_{if}c_{fi} = \sum^{q}_{f=1} a_{if}(b_{if}c_{fi})
+        \end{equation*}
+        Dato che $f$ va da $1$ a $q$ e che in $\mathbb{R}$ vale la proprietà associativa
+        del prodotto, si può dire che
+        \begin{equation*}
+          \sum^{q}_{f=1} (a_{if}b_{fi})c_{fi} = \sum^{q}_{f=1} a_{if}(b_{if}c_{fi})
+        \end{equation*}
+      \end{proof}
     \item Distributiva del prodotto per la somma: $A(B+C) = AB+AC\quad\forall
       A\in\mathbb{R}^{m,n},B,C\in\mathbb{R}^{n,p}$
+      \begin{proof}
+        Per definizione di somma
+        \begin{equation*}
+          B+C = (b_{ij}+c_{ij})
+        \end{equation*}
+        Quindi
+        \begin{equation*}
+          A(B+C) = A(b_{ij}+c_{ij})
+        \end{equation*}
+        e infine
+        \begin{equation*}
+          A(b_{ij}+c_{ij}) = \sum^{p}_{f=1} a_{if}(b_{fi}c_{fi}) =
+          \sum^{p}_{f=1} \left[ a_{if}b_{fi}+a_{if}c_{fi} \right] = \sum^{p}_{f=1}
+          a_{if}b_{fi} + \sum^{p}_{f=1} a_{if}c_{fi} = AB+AC
+        \end{equation*}
+      \end{proof}
     \item $(\lambda A)B = \lambda(AB) = A(\lambda B)\quad\forall A\in\mathbb{R}^{m,n},
       B\in\mathbb{R}^{n,p}$
+      \begin{proof}
+        Per~\autoref{def:matrice_prodotto_scalare} si ha che
+        \begin{equation*}
+          \lambda A=(\lambda a_{ij})
+        \end{equation*}
+        Si ha quindi
+        \begin{equation*}
+          (\lambda A)B = \sum^{p}_{f=1} \lambda a_{if}b_{fi} = \overbrace{\sum^{p}_{f=1}
+          a_{if}\lambda b_{fi}}^{A(\lambda B)} = \lambda \sum^{p}_{f=1} a_{if}b_{fi} =
+          \lambda (AB)
+        \end{equation*}
+      \end{proof}
     \item Solo per le matrici quadrate: $IA = A = AI\quad\forall A\in\mathbb{R}^{n,n}$
   \end{enumerate}
 \end{SubDef}
 Si noti che per il prodotto $\exists A,B\suchthat AB=0 \notimplies A=O\lor B=O$. Si noti
 anche che sempre per il prodotto, in generale $AB=AC\notimplies B=C$ con $A\neq O$.
 
-\begin{Def}{Trasposto di una matrice}
+\begin{Def}{Trasposto di una matrice}\label{def:matrice_trasposto}
   Data $A\in\mathbb{R}^{m,n}$ si dice trasposta di $A$ e si indica con $\transp A$ la matrice
   che si ottiene invertendo righe con colonne. Formalmente
   \begin{equation*}
@@ -311,10 +356,10 @@ anche che sempre per il prodotto, in generale $AB=AC\notimplies B=C$ con $A\neq 
 \begin{SubDef}{Proprietà del trasposto di una matrice}
   Il trasposto gode di alcune proprietà
   \begin{enumerate}
-    \item $\transp(A+B) = \transp A+\transp b\quad\forall A,B\in\mathbb{R}^{m,n}$
-    \item $\transp (\lambda A)=\lambda \transp A\forall\lambda\in\mathbb{R},
+    \item $\transp(A+B) = \transp A+\transp B\quad\forall A,B\in\mathbb{R}^{m,n}$
+    \item $\transp (\lambda A)=\lambda \transp A\quad\forall\lambda\in\mathbb{R},
       A\in\mathbb{R}^{m,n}$
-    \item $\transp{(AB)} = \transp B\transp A$
+    \item $\transp{(AB)} = \transp B\transp A\quad\forall A,B\in\mathbb{R}^{m,n}$
     \item Se $A\in GL(n,\mathbb{R})$ e $A^{-1}$ è la sua inversa, allora anche
       $\transp{A}\in GL(n,\mathbb{R})$ e si ha ${(\transp A)}^{-1} = \transp{(A^{-1})}$
       \begin{proof}
@@ -341,8 +386,22 @@ anche che sempre per il prodotto, in generale $AB=AC\notimplies B=C$ con $A\neq 
   La traccia gode di alcune proprietà:
   \begin{enumerate}
     \item $\tr(A+B) = \tr(A) + \tr(B)\quad\forall A,B\in\mathbb{R}^{n,n}$
+      \begin{proof}
+        Per~\autoref{def:matrice_somma} si ha che
+        \begin{equation*}
+          \tr(A+B) = \sum^{n}_{i=1} (a_{ii}+b_{ii}) = \sum^{n}_{i=1} a_{ii} +
+          \sum^{n}_{i=1} b_{ii} = \tr(A) + \tr(B)
+        \end{equation*}
+      \end{proof}
     \item $\tr(\lambda A) = \lambda\tr(A)\quad\forall\lambda\in\mathbb{R},
       A\in\mathbb{R}^{n,n}$
+      \begin{proof}
+        Per~\autoref{def:matrice_prodotto_scalare} si ha che
+        \begin{equation*}
+          \tr(\lambda A) = \sum^{n}_{i=1} \lambda a_{ii} = \lambda \sum^{n}_{i=1} a_{ii}
+          = \lambda\tr(A)
+        \end{equation*}
+      \end{proof}
     \item $\tr(AB) = \tr(BA)\quad\forall A,B\in\mathbb{R}^{n,n}$
       \begin{proof}
         Siano $A=(a_{ij})$ e $B=(b_{ij})\in\mathbb{R}^{n,n}$. Allora $AB=(c_{ij})$. Per
@@ -372,5 +431,10 @@ anche che sempre per il prodotto, in generale $AB=AC\notimplies B=C$ con $A\neq 
         \end{equation*}
       \end{proof}
     \item $\tr(\transp A) = \tr(A)\quad\forall A\in\mathbb{R}^{n,n}$
+      \begin{proof}
+        Per~\autoref{def:matrice_trasposto} si ha che se $A$ è una matrice diagonale,
+        $\transp A = A$. Dato che la traccia prende solo gli elementi sulla diagonale,
+        farne il trasposto non modifica il risultato.
+      \end{proof}
   \end{enumerate}
 \end{SubDef}
