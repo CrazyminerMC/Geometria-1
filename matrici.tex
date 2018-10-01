@@ -206,6 +206,29 @@ Spesso una matrice viene definita anche in maniera più stringata
   \end{equation*}
 \end{Def}
 
+\begin{Def}{Matrice ridotta per righe}
+  Una matrice si dice ridotta per righe se in ogni riga di non nulla esista un elemento
+  non nullo sotto il quale sono tutti $0$. Ad esempio
+  \begin{equation*}
+    \begin{pmatrix}
+      1 & 2 & 3 & 1\\
+      1 & 0 & 1 & 2\\
+      0 & 0 & 1 & 0\\
+      0 & 0 & 0 & 1
+    \end{pmatrix}
+  \end{equation*}
+\end{Def}
+
+\begin{SubDef}{Proprietà}
+  Si ha che se $AX=B$, allora è equivalente a dire $\widetilde{A}X=\widetilde{B}$ dove
+  le ultime matrici sono ridotte per righe.
+\end{SubDef}
+
+\begin{Def}{Rango di una matrice ridotta per righe}
+  Il rango di una matrice ridotta per righe è il numero di righe non nulle. Si indica
+  con $\rank A$.
+\end{Def}
+
 \subsection{Operazioni}%
 \label{sub:operazioni}
 
