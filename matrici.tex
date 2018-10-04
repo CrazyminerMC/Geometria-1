@@ -186,6 +186,56 @@ Spesso una matrice viene definita anche in maniera più stringata
   \end{enumerate}
 \end{SubDef}
 
+\begin{SubDef}{Calcolare la matrice inversa}
+  Trovare l'inversa di una matrice $A\in\mathbb{R}^{n,n}$ significa risolvere $AX = I$.
+  Definendo $X = (x_{ij})$, si può riscrivere come
+  \begin{equation*}
+    \begin{pmatrix}
+      a_{11} & \cdots & a_{1m}\\
+      \vdots & \ddots & \vdots\\
+      a_{n1} & \cdots & a_{nm}
+    \end{pmatrix}
+    \begin{pmatrix}
+      x_{11} & \cdots & x_{1m}\\
+      \vdots & \ddots & \vdots\\
+      x_{n1} & \cdots & x_{nm}
+    \end{pmatrix} = I
+  \end{equation*}
+  Si definisce $R_i\in\mathbb{R}^n$ la $i$-esima riga di $X$.\\
+  Si può svolgere il prodotto e ottenere
+  \begin{equation*}
+    \begin{pmatrix}
+      a_{11}x_{11}+\cdots+a_{1n}x_{n1} & \cdots & a_{1n}x_{1n}+\cdots+a_{1n}x_{nn}\\
+      \vdots & \ddots & \vdots\\
+      a_{m1}x_{1n}+\cdots+a_{mn}x_{n1} & \cdots & \cdots
+    \end{pmatrix}
+  \end{equation*}
+  Si nota che $a_{11}x_{11}+\cdots+a_{1n}x_{n1}$ è il primo elemento della somma
+  $a_{11}R_1+\cdots+a_{1n}R_n$. Invece l'elemento $a_{1m}x_{1m}+\cdots+a_{1n}x_{nn}$ è
+  l'$n$-esimo elemento della stessa somma.\\
+  In questo modo possiamo definire
+  \begin{equation*}
+    X =
+    \begin{pmatrix}
+      R_1\\
+      \vdots\\
+      R_n
+    \end{pmatrix}
+  \end{equation*}
+  Riportando alla forma di sistema
+  \begin{equation*}
+    \begin{cases}
+      a_{11}R_1 + \cdots+a_{1n}R_n &= (1,0,\ldots,0)\\
+      \vdots &= \vdots\\
+      a_{m1}R_1+\cdots+a_{mn}R_n &= (0,\ldots,1)
+    \end{cases}
+  \end{equation*}
+  Andando a risolvere il sistema, si trova la matrice inversa.\\
+  Alternativamente si può usare un altro metodo che sfrutta la riduzione di
+  Gauss-Jordan. Presa una matrice $(A\vert B)$, si riduce fino ad ottenere $(I\vert B')$
+  dove $B'$ sarà $A^{-1}$.
+\end{SubDef}
+
 \begin{SubDef}{Gruppo lineare}
   Si definisce un gruppo lineare l'insieme
   \begin{equation*}
@@ -227,6 +277,29 @@ Spesso una matrice viene definita anche in maniera più stringata
 \begin{Def}{Rango di una matrice ridotta per righe}
   Il rango di una matrice ridotta per righe è il numero di righe non nulle. Si indica
   con $\rank A$.
+\end{Def}
+
+\begin{Def}{Matrce ridotta a scala}
+  Una matrice $A\in\mathbb{R}^{m,n}$ è ridotta a scala se il primo termine non nullo di
+  ogni riga viene dopo il primo termine non nullo della riga precedente.
+  \begin{equation*}
+    \begin{pmatrix}
+      a_{11}\neq0 & \cdots & \cdots & a_{1m}\\
+      0 & a_{22}\neq0 & \cdots & a_{2m}\\
+      \vdots & \vdots & \vdots & \vdots\\
+      0 & \cdots & \cdots & a_{nm}
+    \end{pmatrix}
+  \end{equation*}
+  Il primo elemento non nullo è detto \textbf{pivot}.\\
+  Si noti che non necessariamente devono essere consecutivi, si può anche avere una
+  matrice del tipo
+  \begin{equation*}
+    \begin{pmatrix}
+      0 & 1 & 2 & 3 & 4\\
+      0 & 0 & 5 & 6 & 7\\
+      0 & 0 & 0 & 0 & 8
+    \end{pmatrix}
+  \end{equation*}
 \end{Def}
 
 \subsection{Operazioni}%

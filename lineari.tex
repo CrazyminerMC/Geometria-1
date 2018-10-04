@@ -1,0 +1,239 @@
+%!TEX ROOT=geometria1.tex
+
+\section{Equazioni e sistemi lineari}%
+\label{sec:equazioni_e_sistemi_lineari}
+
+\subsection{Equazioni lineari}%
+\label{sub:equazioni_lineari}
+
+\begin{Def}{Equazione lineare}
+  Un'equazione lineare nelle incognite $x_1,x_2,\ldots,x_n$ è un'espressione del tipo
+  \begin{equation}\label{eq:lineare_equazione}
+    a_1x_1+a_2x_2+\cdots+a_n x_n=b
+  \end{equation}
+  dove $a,b\in\mathbb{R}, i=1,\ldots,n$.\\
+  $a_i$ sono detti coefficienti, $b$ è detto termine noto.\\
+  Scritta in forma matriciale
+  \begin{equation*}
+    \begin{pmatrix}
+      a_1&a_2&a_3&\cdots&a_n
+    \end{pmatrix}
+    \begin{pmatrix}
+      x_1\\x_2\\\vdots\\x_n
+    \end{pmatrix}
+    = b
+  \end{equation*}
+\end{Def}
+
+\begin{Def}{Soluzione dell'equazione lineare}
+  Una soluzione dell'equazione lineare~\eqref{eq:lineare_equazione} è una $n$-upla di
+  numeri reali
+  $(\widetilde{x_1},\widetilde{x_2},\ldots,\widetilde{x_n})$ che sostituiti
+  nell'equazione, la verifica.
+\end{Def}
+
+\begin{Def}{Equazione lineare omogenea}
+  L'equazione~\eqref{eq:lineare_equazione} si dice omogenea se $b=0$.
+\end{Def}
+
+\begin{SubDef}{Soluzione particolare}
+  La $n$-upla $(0,0,\ldots,0)$ è soluzione dell'equazione omogenea.
+\end{SubDef}
+
+\begin{SubDef}{Soluzione particolare}\label{def:lineare_equazione_soluzione_particolare_2}
+  Se $(\tilde{x_1},\ldots,\tilde{x_n})$ è soluzione, lo è anche
+  $(t\tilde{x_1},\ldots,t\tilde{x_n})$.
+\end{SubDef}
+
+\subsection{Sistemi lineari}%
+\label{sub:sistemi_lineari}
+
+\begin{Def}{Sistema lineare}
+  Un sistema lineare di $m$ equazioni e $n$ incognite $x_1,\ldots,x_n$ è un instieme di
+  equazioni lineari del tipo
+  \begin{equation}\label{eq:lineare_sistema}
+    \begin{cases}
+      a_{11}x_1+\cdots+a_{1m}x_n &= b_1\\
+      \vdots &= \vdots\\
+      a_{m1}x_1+\cdots+a_{mn}x_n &= b_m
+    \end{cases}
+  \end{equation}
+  $a_{ij}$ si dicono coefficienti (con $i=1,\ldots,n,\;j=1,\ldots,m$).\\
+  $b_{i}$ si dicono termini noti.\\
+  Scritto in forma matriciale
+  \begin{equation*}
+    AX=B
+  \end{equation*}
+  in cui
+  \begin{alignat*}{2}
+    A &=
+    \begin{pmatrix}
+      a_{11} & \cdots & a_{1m}\\
+      \vdots & \ddots & \vdots\\
+      a_{m1} & \cdots & a_{mn}
+    \end{pmatrix}\in\mathbb{R}^{m,n} &\qquad &\text{Matrice dei coefficienti}\\
+    X &=
+    \begin{pmatrix}
+      x_1\\\vdots\\x_n
+    \end{pmatrix}\in\mathbb{R}^{n,1} & B &=
+    \begin{pmatrix}
+      b_1\\\vdots\\b_m
+    \end{pmatrix}\in\mathbb{R}^{m,1}
+  \end{alignat*}
+\end{Def}
+
+\begin{Def}{Matrice completa}
+  Si definisce matrice completa
+  \begin{equation*}
+    (A\vert B)=
+    \left(
+      \begin{array}{@{}ccc|c@{}}
+        a_{11} & \cdots & a_{1m} & b_1\\
+        \vdots & \ddots & \vdots & \vdots\\
+        a_{m1} & \cdots & a_{mn} & b_m
+      \end{array}
+    \right)
+  \end{equation*}
+  Ciascuna riga si indica con $R_i$.
+\end{Def}
+
+\begin{Def}{Sistema lineare omogeneo}
+  Un sistema lineare è omogeneo se $b_j=0\;\forall j=1,\ldots,m$, ovvero
+  \begin{equation*}
+    AX=O
+  \end{equation*}
+\end{Def}
+
+\begin{Def}{Soluzione del sistema lineare}
+  Soluzione del sistema lineare~\eqref{eq:lineare_sistema} è una $n$-upla di numeri
+  reali $(\widetilde{x_1},\ldots,\widetilde{x_n})$ che sostituia nelle ingognite
+  verifica tutte le equazioni.
+\end{Def}
+
+\begin{SubDef}{Soluzioni di un sistema omogeneo}
+  Se un sistema lineare è omogeneo, allora $(0,\ldots,0)$ è una sua soluzione. Si
+  conclude quindi che un sistema lineare omogeneo è sempre compatibile.
+\end{SubDef}
+
+\begin{Def}{Sistema compatibile}
+  Un sistema lineare si dice compatibile se ammette soluzioni, incompatibile altrimenti.
+\end{Def}
+
+\begin{Def}{Sistema equivalente}
+  Un sistema si dice equivalente ad un altro se ammette le stesse soluzioni.
+\end{Def}
+
+\subsubsection{Metodo di riduzione di Gauss}%
+\label{ssub:metodo_di_riduzione_di_gauss}
+
+Il metodo di riduzione di Gauss permette di semplificare un sistema lineare in uno
+equivalente.
+
+\begin{Thm}{Operazioni elementari di riduzione per righe}
+  Eseguendo un numero finito di volte le tre operazioni
+  \begin{enumerate}
+    \item\label{thm:lineare_riduzione_1} Scambiare due equazioni
+    \item\label{thm:lineare_riduzione_2} Moltiplicare per un numero reale diverso da
+      $0$
+    \item\label{thm:lineare_riduzione_3} Sostituire ad un'equazione la somma di se
+      stessa con un'altra equazione moltiplicata per un qualsiasi numero reale
+  \end{enumerate}
+  si ottiene un sistema lineare equivalente.
+\end{Thm}
+
+\begin{proof}
+  Dimostrare~\ref{thm:lineare_riduzione_1} è ovvio, in quanto le equazioni non si
+  modificano.\\
+  Il punto~\ref{thm:lineare_riduzione_2} invece deve essere dimostrato che se una
+  $n$-upla è soluzione di un sistema, lo è anche dell'altro e viceversa. Si ha quindi
+  \begin{equation*}
+    \begin{cases}
+      a_{11}x_1+\ldots a_{1n}x_n &= b_1\\
+      \vdots &= \vdots\\
+      a_{m1}x_1+\ldots a_{mn}x_m &= b_m
+    \end{cases} \implies
+    \begin{cases}
+      \lambda(a_{11}x_1+\ldots a_{1n}x_n) &= \lambda b_1\\
+      \vdots &= \vdots\\
+      a_{m1}x_1+\ldots a_{mn}x_m &= b_m
+    \end{cases}
+  \end{equation*}
+  Per~\autoref{def:lineare_equazione_soluzione_particolare_2} si ha che la seconda
+  equazione ha le stesse soluzioni della prima.
+  \begin{equation*}
+    \begin{cases}
+      \lambda(a_{11}x_1+\ldots a_{1n}x_n) &= \lambda b_1\\
+      \vdots &= \vdots\\
+      a_{m1}x_1+\ldots a_{mn}x_m &= b_m
+    \end{cases} \implies
+    \begin{cases}
+      a_{11}x_1+\ldots a_{1n}x_n &= b_1\\
+      \vdots &= \vdots\\
+      a_{m1}x_1+\ldots a_{mn}x_m &= b_m
+    \end{cases}
+  \end{equation*}
+  dividendo per $\lambda\neq0$.
+  Per~\autoref{def:lineare_equazione_soluzione_particolare_2} si ha che hanno le stesse
+  soluzioni.\\
+  Per il punto~\ref{thm:lineare_riduzione_3} si procede analogamente al
+  punto~\ref{thm:lineare_riduzione_2}.
+\end{proof}
+
+Dal punto di vista matriciale, le trasformazioni si applicano nei seguenti modi
+\begin{align*}
+  R_i &\leftrightarrow R_j\\
+  R_i &\leftrightarrow \lambda R_i\quad\lambda\neq0\\
+  R_i &\leftrightarrow R_i+\lambda R_j\quad\lambda\in\mathbb{R},\;j\neq i
+\end{align*}
+Eseguire queste operazioni un numero finito di volte significa trasformare $(A\vert B)$
+in $(\widetilde{A}\vert\widetilde{B})$ in modo che ogni riga di $\widetilde{A}$ non
+nulla esista un elemento non nullo sotto il quale sono tutti $0$.
+
+\begin{Def}{Sistema ridotto}
+  Un sistema lineare è ridotto se è ridotta $A$.
+\end{Def}
+
+\begin{Thm}{Teorema di Rouché-Capelli}\label{thm:lineare_rouche-capelli}
+  Un sistema lineare di $m$ equazioni e $n$ incognite
+  \begin{equation*}
+    AX = B
+  \end{equation*}
+  è compatibile se e solo se
+  \begin{equation*}
+    \rank(A) = \rank(A\vert B)
+  \end{equation*}
+\end{Thm}
+
+In particolare si ha che se $\rank(A)=\rank(A\vert B)=n$ la soluzione è unica. Se invece
+$\rank(A)=\rank(B)=k<n$ ci sono infinite soluzioni che dipendono da $n-k$ variabili.
+Quindi ci sono $\infty^{n-k}$ soluzioni.
+
+\begin{SubThm}{Teorema di Rouché-Capelli per un sistema lineare omogeneo}
+  Un sistema lineare omogeneo di $m$ equazioni e $n$ incognite
+  \begin{equation*}
+    AX = O
+  \end{equation*}
+  è sempre compatibile. Se
+  \begin{equation*}
+    \rank(A) = n
+  \end{equation*}
+  esiste un'unica soluzione che è quella nulla. Se
+  \begin{equation*}
+    \rank(A) = k < n
+  \end{equation*}
+  il sistema ammette $\infty^{n-k}$ soluzioni.
+\end{SubThm}
+
+Si noti che se $AX=B$ ha un'unica soluzione e utilizzando il metodo di riduzione di
+Gauss-Jordan si può arrivare ad una matrice ridotta a scala del tipo
+\begin{equation*}
+  \left(
+    \begin{array}{@{}cccc|c@{}}
+      1 & 0 & \cdots & 0 & \widetilde{b_1}\\
+      0 & 1 & \cdots & \vdots & \vdots\\
+      \vdots & \cdots & \ddots & \vdots & \vdots\\
+      0 & \cdots & \cdots & 1 & \widetilde{b_n}
+    \end{array}
+  \right)
+\end{equation*}
+in cui si ha che $A=I$.

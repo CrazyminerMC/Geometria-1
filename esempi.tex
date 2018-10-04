@@ -1,0 +1,129 @@
+%!TEX ROOT=geometria1.tex
+
+\section{Esempi}%
+\label{sec:esempi}
+
+Qui verranno riportati alcuni esempi di teoremi, proprietà o semplici esercizi che
+mostrano un'applicazione pratica della teoria.
+
+\subsection{\nameref{sec:matrici}}%
+
+\subsection{\nameref{sec:equazioni_e_sistemi_lineari}}%
+
+\subsection{Uso del teorema di Rouché-Capelli}%
+\label{sub:uso_del_teorema_di_rouche_capelli}
+
+\paragraph{Esempio 1}%
+\textbf{Discutere al variare di $h,k\in\mathbb{R}$ il sistema}
+\begin{equation*}
+  \begin{cases}
+    kx + y + z = 1\\
+    x + ky + z = 1\\
+    x + y + kz = h
+  \end{cases}
+\end{equation*}
+
+Si può riscrivere il sistema in forma matriciale con la matrice completa
+\begin{equation*}
+  (A\vert B) =
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    k & 1 & 1 & 1\\
+    1 & k & 1 & 1\\
+    1 & 1 & k & h
+    \end{array}
+  \right)
+\end{equation*}
+Possiamo ora cercare di ridurre la matrice
+\begin{equation*}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    k & 1 & 1 & 1\\
+    1 & k & 1 & 1\\
+    1 & 1 & k & h
+    \end{array}
+  \right) \xrightarrow{R_1\leftrightarrow R_2}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    1 & k & 1 & 1\\
+    k & 1 & 1 & 1\\
+    1 & 1 & k & h
+    \end{array}
+  \right) \xrightarrow{\substack{R_2\to R_2-kR_1\\ R_3\to R_3-R_1}}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    1 & k & 1 & 1\\
+    0 & 1-k & 1-k & 1-k\\
+    0 & 1-k & 1-k & h-1
+    \end{array}
+  \right)
+\end{equation*}
+A questo punto si distinguono due casi, se $1-k = 0$ o $1-k\neq0$.\\
+Se $1-k=0\implies k=1$, sostituendo
+\begin{equation*}
+  \left(
+    \begin{array}{@{}ccc|c}
+    1 & 1 & 1 & 1\\
+    0 & 0 & 0 & 0\\
+    0 & 0 & 0 & h-1
+    \end{array}
+  \right)
+\end{equation*}
+Per questa matrice ridotta per righe si ha $\rank(A)=1$. Per
+il~\autoref{thm:lineare_rouche-capelli} si distinguono gli ultimi due casi per $h$. Se
+$h=1$, allora il sistema è compatibile con $\infty^2$ soluzioni. Altrimenti non ci sono
+soluzioni in quanto $\rank(A\vert B) = 2 \neq \rank(A)$.\\
+Se $1-k\neq0\implies k\neq1$ i può dividere la seconda e terza riga per $\frac{1}{1-k}$
+ottenendo
+\begin{equation*}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    1 & k & 1 & 1\\
+    0 & 1+k & 1 & 1\\
+    0 & 1 & -1 & \frac{h-1}{1-k}
+    \end{array}
+  \right)
+\end{equation*}
+Andando a sommare $R_3$ con $R_2$, si ha
+\begin{equation*}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+    1 & k & 1 & 1\\
+    0 & 1+k & 1 & 1\\
+    0 2+k & 0 & \frac{h-1}{1-k}+1
+    \end{array}
+  \right)
+\end{equation*}
+A questo punto abbiamo due casi: $k=-2$ e non. Immediatamente si vede che $k\neq-2$, si
+ha che $\rank(A\vert B) = 3$ e quindi non ci sono soluzioni per il
+teorema~\autoref{thm:lineare_rouche-capelli}.\\
+Se invece $k=-2$ si può riscrivere
+\begin{equation*}
+  \left(
+    \begin{array}{@{}ccc|c@{}}
+      1 & -2 & 1 & 1\\
+      0 & -1 & 1 & 1\\
+      0 & 0 & 0 & \frac{h+2}{3}
+    \end{array}
+  \right)
+\end{equation*}
+Si distinguono due casi a seconda di $h$. Se $h=-2$ o meno. Si vede immediatamente che
+se $h\neq-2$ si ha che $\rank(A\vert B)=3\neq2$ e quindi non ci sono soluzioni per
+il~\autoref{thm:lineare_rouche-capelli}.\\
+Se invece $h=-2$ si ha che $\rank(A) = \rank(A\vert B) = 2$ e quindi ci sono $\infty^1$
+soluzioni.\\
+Riassumendo
+\begin{equation*}
+  \begin{cases}
+    k=1,
+    \begin{cases}
+      h=1\implies\infty^1\\
+      h\neq 1\implies 0
+    \end{cases}\\
+    k\neq1,
+    \begin{cases}
+      h=-2\implies\infty^1\\
+      h\neq-2\implies 0
+    \end{cases}
+  \end{cases}
+\end{equation*}
