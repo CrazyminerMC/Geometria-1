@@ -10,6 +10,55 @@ mostrano un'applicazione pratica della teoria.
 
 \subsection{\nameref{sec:equazioni_e_sistemi_lineari}}%
 
+\subsubsection{Numero di soluzioni di un sistema}%
+\label{ssub:numero_di_soluzioni_di_un_sistema}
+
+\paragraph{Esempio 1}%
+\label{par:esempio_1}
+
+\textbf{Si discuta il numero di soluzioni del seguente sistema}
+\begin{equation*}
+  \begin{cases}
+    x_1+x_2-x_3 = 1\\
+    2x_1+2x_2+x_3=0\\
+    x_1+x_2+2x_3=-1
+  \end{cases}
+\end{equation*}
+
+Si scrive subito la matrice completa associata
+\begin{equation*}
+  (A\vert B) =
+  \begin{pmatrix}[ccc|c]
+    1 & 1 & -1 & 1\\
+    2 & 2 & 1 & 0\\
+    1 & 1 & 2 & -1
+  \end{pmatrix}
+\end{equation*}
+Ora dobbiamo cercare di ridurla per righe in modo da oter determinare il numero di
+soluzioni.
+\begin{equation*}
+  (A\vert B)\xrightarrow{\substack{R_2\to R_2-2R_1\\R_3\to R_3-R1}}
+  \begin{pmatrix}[ccc|c]
+    1 & 1 & -1 & 1\\
+    0 & 0 & 3 & -2\\
+    0 & 0 & 3 & -2
+  \end{pmatrix}\xrightarrow{\substack{R_3\to R_3-R_2}}
+  \begin{pmatrix}[ccc|c]
+    1 & 1 & -1 & 1\\
+    0 & 0 & 3 & -2\\
+    0 & 0 & 0 & 0
+  \end{pmatrix}
+\end{equation*}
+A questo punto abbiamo ridotto per righe questa matrice. Possiamo tornare al sistema
+\begin{equation*}
+  \begin{cases}
+    x_1+x_2-x_3=1\\
+    3x_3=-2
+  \end{cases}
+\end{equation*}
+Questo sistema è in due equazioni ma tre incognite, questo significa che se due sono
+fissate, una è libera di modificarsi. Ovvero ci sono $\infty^1$ soluzioni.
+
 \subsubsection{Uso del teorema di Rouché-Capelli}%
 \label{sub:uso_del_teorema_di_rouche_capelli}
 
@@ -22,52 +71,43 @@ mostrano un'applicazione pratica della teoria.
     x + y + kz = h
   \end{cases}
 \end{equation*}
-
 Si può riscrivere il sistema in forma matriciale con la matrice completa
 \begin{equation*}
   (A\vert B) =
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \begin{pmatrix}[ccc|c]
     k & 1 & 1 & 1\\
     1 & k & 1 & 1\\
     1 & 1 & k & h
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 Possiamo ora cercare di ridurre la matrice
 \begin{equation*}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \begin{pmatrix}[ccc|c]
     k & 1 & 1 & 1\\
     1 & k & 1 & 1\\
     1 & 1 & k & h
-    \end{array}
-  \right) \xrightarrow{R_1\leftrightarrow R_2}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \end{pmatrix}
+  \xrightarrow{R_1\leftrightarrow R_2}
+    \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     k & 1 & 1 & 1\\
     1 & 1 & k & h
-    \end{array}
-  \right) \xrightarrow{\substack{R_2\to R_2-kR_1\\ R_3\to R_3-R_1}}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \end{pmatrix}
+  \xrightarrow{\substack{R_2\to R_2-kR_1\\ R_3\to R_3-R_1}}
+  \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1-k & 1-k & 1-k\\
     0 & 1-k & 1-k & h-1
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 A questo punto si distinguono due casi, se $1-k = 0$ o $1-k\neq0$.\\
 Se $1-k=0\implies k=1$, sostituendo
 \begin{equation*}
-  \left(
-    \begin{array}{@{}ccc|c}
+    \begin{pmatrix}[ccc|c]
     1 & 1 & 1 & 1\\
     0 & 0 & 0 & 0\\
     0 & 0 & 0 & h-1
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 Per questa matrice ridotta per righe si ha $\rank(A)=1$. Per
 il~\autoref{thm:lineare_rouche-capelli} si distinguono gli ultimi due casi per $h$. Se
@@ -76,36 +116,30 @@ soluzioni in quanto $\rank(A\vert B) = 2 \neq \rank(A)$.\\
 Se $1-k\neq0\implies k\neq1$ i può dividere la seconda e terza riga per $\frac{1}{1-k}$
 ottenendo
 \begin{equation*}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1+k & 1 & 1\\
     0 & 1 & -1 & \frac{h-1}{1-k}
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 Andando a sommare $R_3$ con $R_2$, si ha
 \begin{equation*}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1+k & 1 & 1\\
     0 & 2+k & 0 & \frac{h-1}{1-k}+1
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 A questo punto abbiamo due casi: $k=-2$ e non. Immediatamente si vede che $k\neq-2$, si
 ha che $\rank(A\vert B) = 3$ e quindi non ci sono soluzioni per il
 teorema~\autoref{thm:lineare_rouche-capelli}.\\
 Se invece $k=-2$ si può riscrivere
 \begin{equation*}
-  \left(
-    \begin{array}{@{}ccc|c@{}}
+    \begin{pmatrix}[ccc|c]
       1 & -2 & 1 & 1\\
       0 & -1 & 1 & 1\\
       0 & 0 & 0 & \frac{h+2}{3}
-    \end{array}
-  \right)
+    \end{pmatrix}
 \end{equation*}
 Si distinguono due casi a seconda di $h$. Se $h=-2$ o meno. Si vede immediatamente che
 se $h\neq-2$ si ha che $\rank(A\vert B)=3\neq2$ e quindi non ci sono soluzioni per

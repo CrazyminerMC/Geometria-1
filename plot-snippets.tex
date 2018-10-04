@@ -276,12 +276,19 @@
 \makeatother
 
 % Matrix spacing
+%\makeatletter
+%\renewcommand*\env@matrix[1][\arraystretch]{%
+%  \edef\arraystretch{#1}%
+%  \hskip -\arraycolsep
+%  \let\@ifnextchar\new@ifnextchar
+%\array{*\c@MaxMatrixCols c}}
+%\makeatother
+
 \makeatletter
-\renewcommand*\env@matrix[1][\arraystretch]{%
-  \edef\arraystretch{#1}%
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
   \hskip -\arraycolsep
   \let\@ifnextchar\new@ifnextchar
-\array{*\c@MaxMatrixCols c}}
+  \array{#1}}
 \makeatother
 
 \everymath{\displaystyle}
