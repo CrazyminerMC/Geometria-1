@@ -86,13 +86,11 @@
   Si definisce matrice completa
   \begin{equation*}
     (A\vert B)=
-    \left(
-      \begin{array}{@{}ccc|c@{}}
-        a_{11} & \cdots & a_{1m} & b_1\\
-        \vdots & \ddots & \vdots & \vdots\\
-        a_{m1} & \cdots & a_{mn} & b_m
-      \end{array}
-    \right)
+    \begin{pmatrix}[ccc|c]
+      a_{11} & \cdots & a_{1m} & b_1\\
+      \vdots & \ddots & \vdots & \vdots\\
+      a_{m1} & \cdots & a_{mn} & b_m
+    \end{pmatrix}
   \end{equation*}
   Ciascuna riga si indica con $R_i$.
 \end{Def}
@@ -227,13 +225,60 @@ Quindi ci sono $\infty^{n-k}$ soluzioni.
 Si noti che se $AX=B$ ha un'unica soluzione e utilizzando il metodo di riduzione di
 Gauss-Jordan si può arrivare ad una matrice ridotta a scala del tipo
 \begin{equation*}
-  \left(
-    \begin{array}{@{}cccc|c@{}}
-      1 & 0 & \cdots & 0 & \widetilde{b_1}\\
-      0 & 1 & \cdots & \vdots & \vdots\\
-      \vdots & \cdots & \ddots & \vdots & \vdots\\
-      0 & \cdots & \cdots & 1 & \widetilde{b_n}
-    \end{array}
-  \right)
+  \begin{pmatrix}[cccc|c]
+    1 & 0 & \cdots & 0 & \widetilde{b_1}\\
+    0 & 1 & \cdots & \vdots & \vdots\\
+    \vdots & \cdots & \ddots & \vdots & \vdots\\
+    0 & \cdots & \cdots & 1 & \widetilde{b_n}
+  \end{pmatrix}
 \end{equation*}
 in cui si ha che $A=I$.
+
+
+\subsection{Equazioni matriciali}%
+\label{sub:equazioni_matriciali}
+
+\begin{Def}{Equazione matriciale}
+  Un'equazione matriciale è un'equazione del tipo
+  \begin{equation*}
+    AX = B
+  \end{equation*}
+  con $A\in\mathbb{R}^{m,n}$, $X\in\mathbb{R}^{n,p}$, $B\in\mathbb{R}^{m,p}$.
+\end{Def}
+
+\begin{SubDef}{Casi particolari}
+  Se $p=1$, si ha un sistema lineare.\\
+  Se $AX=I$, si ha che $X$ è l'inversa di $A$.\\
+  Se si ha $YC=D$, si può ricondurre in modo che $\transp(YC)=\transp C\iff\transp
+  C\transp Y = \transp D$.
+\end{SubDef}
+
+Se ad esempio si pensa di scrivere $X$ come matrice colonna di $n$-uple, del tipo
+\begin{equation*}
+  X =
+  \begin{pmatrix}
+    X_1\\
+    \vdots\\
+    X_n
+  \end{pmatrix}
+\end{equation*}
+e la stessa cosa per $B$
+\begin{equation*}
+  B =
+  \begin{pmatrix}
+    B_1\\
+    \vdots\\
+    B_n
+  \end{pmatrix}
+\end{equation*}
+si può scrivere l'equazione matriciale come sistema
+\begin{equation}\label{eq:lineare_matriciale}
+  AX = B \iff
+    \begin{cases}
+      a_{11}x_1 + \cdots + a_{1m}x_1 &= B_1\\
+      \vdots & \vdots\\
+      a_{n1}x_1 + \cdots + a_{nm}x_n &= B_n
+    \end{cases}
+\end{equation}
+Si può notare come~\eqref{eq:lineare_matriciale} sia equivalente ad un sistema lineare
+di $pn$  incognite $x_{ij}$.

@@ -1,0 +1,109 @@
+%!TEX ROOT=geometria1.tex
+
+\section{Spazio vettoriale}%
+\label{sec:spazio_vettoriale}
+
+\begin{Def}{Spazio vettoriale}
+  Un insieme $V$ si definisce spazio vettoriale sul campo $\mathbb{K}$ se sono definite
+  su $V$ due operazioni
+  \begin{enumerate}
+    \item \textbf{Somma} definita come
+      \begin{align*}
+        +:\,&V\times V\to V\\
+            &(\vec{x},\vec{y})\mapsto\vec{x}+\vec{y}
+      \end{align*}
+      rispetto alla quale $(V,\,+)$ ha la struttura di gruppo commutativo. Ovvero
+      \begin{enumerate}
+        \item $\vec{x}+\vec{y} = \vec{y}+\vec{x}$
+        \item $(\vec{x}+\vec{y})+\vec{z} = \vec{x} + (\vec{y}+\vec{z})$
+        \item $\exists\vec{0}\in V\suchthat \vec{x}+\vec{0}=\vec{x}$ e si definisce
+          $\vec{0}$ vettore nullo.
+        \item $\forall\vec{x}\in V\,\exists\vec{x}\in
+          V\suchthat\vec{x}+(-\vec{x})=\vec{0}$ e si definisce opposto.
+      \end{enumerate}
+    \item \textbf{Prodotto} definito per uno scalare
+      \begin{align*}
+        &\mathbb{K}\times V\to V\\
+        &(\lambda,\vec{x})\mapsto \lambda\vec{x}
+      \end{align*}
+      e si ha che
+      \begin{enumerate}
+        \item $\lambda(\vec{x}+\vec{y}) = \lambda\vec{x}+\lambda\vec{y}$
+        \item $(\lambda+\mu)\vec{x} = \lambda\vec{x}+\mu\vec{x}$
+        \item $(\lambda\mu)\vec{x} = \lambda(\mu\vec{x})$
+        \item $1\vec{x} = \vec{x}$
+      \end{enumerate}
+  \end{enumerate}
+\end{Def}
+
+\begin{Def}{Eleementi dello spazio}
+  Gli elementi di $V$ sono detti vettori, quelli di $\mathbb{K}$ scalari.
+\end{Def}
+
+\begin{Def}{Campo}
+  Un campo è un insieme i cui elementi sono detti numeri, che contiene $0$ e $1$ e ha
+  due operazioni $+$ e $\cdot$ che verificano
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item $\alpha+\beta = \beta+\alpha$
+      \item $\alpha+(\beta+\gamma) = (\alpha+\beta)+\gamma$
+      \item $\alpha+0 = \alpha$
+      \item $\alpha+(-\alpha)=0$
+      \columnbreak%
+      \item $\alpha\beta = \beta\alpha$
+      \item $(\alpha\beta)\gamma = \alpha(\beta\gamma)$
+      \item $1\alpha = \alpha$
+      \item $\alpha\alpha^{-1}=1$ se $\alpha\neq0$
+      \item $(\alpha+\beta)\gamma = \alpha\gamma+\beta\gamma$
+    \end{enumerate}
+  \end{multicols}
+\end{Def}
+
+\subsection{Spazi particolari}%
+\label{sub:spazi_particolari}
+
+In generale $\mathbb{R}^n$ è uno spazio vettoriale, così come anche in generale
+$\mathbb{K}^n$. Infatti si ha che
+\begin{equation*}
+  (x_1,\ldots,x_2)+(y_1,\ldots,y_n) = (x_1+y_1,\ldots,x_n+y_n)
+\end{equation*}
+e
+\begin{equation*}
+  \lambda(x_1,\ldots,x_n) = (\lambda x_1,\ldots,\lambda x_n)
+\end{equation*}
+In generale anche $\mathbb{K}^{m,n}$ è uno spazio vettoriale (e quindi anche
+$\mathbb{R}^{m,n}$).\\
+Il più piccolo spazio vettoriale è quello composto dal solo vettore nullo, ovvero
+$\{\vec{0}\}$.\
+Un caso particolare è lo spazio dei polinomi reali in $x$, denotato come $\mathbb{R}[x]$
+che è
+\begin{equation*}
+  \mathbb{R}[x]\bydef \left\{ a_0+a_1x+\cdots+a_n x^n\Setsuchthat
+  n\in\mathbb{N},\,a_i\in\mathbb{R},\,i=0,\ldots,n \right\}
+\end{equation*}
+È anche interessante il caso in cui si consideri l'insieme
+\begin{equation*}
+  \mathscr{F} = \left\{ f:\,\mathbb{R}\to\mathbb{R}\qq{funzione} \right\}
+\end{equation*}
+in quanto anche questo è uno spazio vettoriale infatti
+\begin{equation*}
+  (f+g)(x)\bydef f(x)+g(x)
+\end{equation*}
+e
+\begin{equation*}
+  (\lambda f)(x)\bydef \lambda f(x)
+\end{equation*}
+
+\subsection{Proprietà formali}%
+\label{sub:proprieta_formali}
+
+In un campo vettoriale su $\mathbb{K}$ valgono le seguenti proprietà
+\begin{enumerate}
+  \item Vettore nullo unico
+  \item Opposto unico
+  \item Se per $\vec{x}$, $\vec{y}$, $\vec{z}$ si ha $\vec{x}+\vec{y}=\vec{x}+\vec{z}$
+    allora $\vec{y}=\vec{z}$
+  \item Solo su $\mathbb{R}$ vale che $\lambda\vec{x}=\vec{0}$ con
+    $\lambda\in\mathbb{R}$ allora $\lambda=0\lor\vec{x}=\vec{0}$
+  \item $(-1)\vec{x} = -\vec{x}$
+\end{enumerate}
