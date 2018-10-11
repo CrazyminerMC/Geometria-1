@@ -16,10 +16,10 @@
       \begin{enumerate}
         \item $\vec{x}+\vec{y} = \vec{y}+\vec{x}$
         \item $(\vec{x}+\vec{y})+\vec{z} = \vec{x} + (\vec{y}+\vec{z})$
-        \item $\exists\vec{0}\in V\suchthat \vec{x}+\vec{0}=\vec{x}$ e si definisce
-          $\vec{0}$ vettore nullo.
+        \item $\exists\vec{o}\in V\suchthat \vec{x}+\vec{o}=\vec{x}$ e si definisce
+          $\vec{o}$ vettore nullo.
         \item $\forall\vec{x}\in V\,\exists\vec{x}\in
-          V\suchthat\vec{x}+(-\vec{x})=\vec{0}$ e si definisce opposto.
+          V\suchthat\vec{x}+(-\vec{x})=\vec{o}$ e si definisce opposto.
       \end{enumerate}
     \item \textbf{Prodotto} definito per uno scalare
       \begin{align*}
@@ -74,7 +74,7 @@ e
 In generale anche $\mathbb{K}^{m,n}$ è uno spazio vettoriale (e quindi anche
 $\mathbb{R}^{m,n}$).\\
 Il più piccolo spazio vettoriale è quello composto dal solo vettore nullo, ovvero
-$\{\vec{0}\}$.\
+$\{\vec{o}\}$.\
 Un caso particolare è lo spazio dei polinomi reali in $x$, denotato come $\mathbb{R}[x]$
 che è
 \begin{equation*}
@@ -100,10 +100,168 @@ e
 In un campo vettoriale su $\mathbb{K}$ valgono le seguenti proprietà
 \begin{enumerate}
   \item Vettore nullo unico
+    \begin{proof}
+      Supponiamo per assurdo che esistano $\vec{o}$ e $\vec{o'}$ nulli in modo che
+      $\vec{o}\neq\vec{o'}$. Allora si ha $\vec{o}=\vec{o}+\vec{o'}$ sfruttando il fatto
+      che $\vec{o'}$ è un vettore nullo. Analogamente si ha che
+      $\vec{o'}=\vec{o'}+\vec{o}$. Da queste due relazioni si deduce che
+      $\vec{o'}=\vec{o}$ che va contro l'ipotesi iniziale.
+    \end{proof}
   \item Opposto unico
+    \begin{proof}
+      Supponiamo per assurdo che esistano $\vec{x_1}\neq\vec{x_2}$ oposti di $\vec{x}$.
+      Allora possiamo scrivere $(\vec{x}+\vec{x_1})+\vec{x_2} =
+      \vec{o}+\vec{x_2}=\vec{x_2}$. Analogamente si ha che
+      $(\vec{x}+\vec{x_1})+\vec{x_2}=\vec{x}+(\vec{x_2}+\vec{x_1})=(\vec{x}+\vec{x_2})
+      +\vec{x_1}=\vec{o}+\vec{x_1}=\vec{x_1}$. Si deduce quindi che
+      $\vec{x_1}=\vec{x_2}$ ma per ipotesi questo non può essere.
+    \end{proof}
   \item Se per $\vec{x}$, $\vec{y}$, $\vec{z}$ si ha $\vec{x}+\vec{y}=\vec{x}+\vec{z}$
     allora $\vec{y}=\vec{z}$
-  \item Solo su $\mathbb{R}$ vale che $\lambda\vec{x}=\vec{0}$ con
-    $\lambda\in\mathbb{R}$ allora $\lambda=0\lor\vec{x}=\vec{0}$
+    \begin{proof}
+      La dimostrazione segue direttamente dalla seconda proprietà, infatti si può
+      aggiungere $-\vec{x}$ ad entrambi i membri e ottenere
+      $\vec{x}+\vec{y}-\vec{x}=\vec{x}+\vec{z}-\vec{x}$. Si ottiene
+      $\vec{o}+\vec{y}=\vec{z}+\vec{o}$ e infine $\vec{y}=\vec{z}$.
+    \end{proof}
+  \item Solo su $\mathbb{R}$ vale che $\lambda\vec{x}=\vec{o}$ con
+    $\lambda\in\mathbb{R}$ allora $\lambda=0\lor\vec{x}=\vec{o}$
+    \begin{proof}
+      Essendo una biimplicazione, bisogna dimostrare entrambi i versi. Dimostriamo
+      $\Leftarrow$. Possiamo provare che $0\vec{x}\vec{o}$ e $\lambda\vec{o}=\vec{o}$.
+      Per il primo caso si può dire che $0\vec{x}=(0+0)\vec{x}=0\vec{x}+0\vec{x}$. Per
+      il punto precedente, abbiamo che $o\vec{x}=o\vec{x}+o\vec{x}$ e semplificando si
+      ottiene $\vec{o}=o\vec{x}$. Il secondo caso si dimostra analogamente
+      $\lambda\vec{o}=\lambda(\vec{o}+\vec{o})=\lambda\vec{o}+\lambda\vec{o}$. Per il
+      punto precedente $\lambda\vec{o}=\vec{o}\lambda+\lambda\vec{o}$, semplificando
+      $\vec{0}=\lambda\vec{o}$.\\
+      L'altro vers ($\Rightarrow$) dice che $\lambda\vec{x}=\vec{o}$. Se $\lambda=0$ è
+      immediato. Se $\lambda\neq0$, sicuramente $\exists\lambda^{-1}$. Possiamo allora
+      scrivere $\vec{o}=\lambda^{-1}\vec{o}=\lambda^{-1}(\lambda\vec{o}\vec{x})=
+      (\lambda^{-1}\lambda)\vec{x}=\vec{x}$.
+    \end{proof}
   \item $(-1)\vec{x} = -\vec{x}$
+    \begin{proof}
+      Si ha che $\vec{x}+(-1)\vec{x}=1\vec{x}+(-1)\vec{x}=(1-1)\vec{x}=\vec{o}$.
+    \end{proof}
 \end{enumerate}
+
+\subsection{Sottoinsiemi di spazi vettoriali}%
+\label{sub:sottoinsiemi_di_spazi_vettoriali}
+
+\begin{Def}{Sottospazio vettoriale}
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$. Un sottoinsieme $W$ di $V$ è un
+  sottospazio vettoriale di $V$ se $W$ è uno spazio vettoriale rispetto alle stesse
+  operazioni di $V$, ovvero rispetto alla somma e al prodotto per scalari. Formalmente
+  se vale
+  \begin{equation*}
+    \forall\lambda,\mu\in\mathbb{K}\;\forall\vec{x},\vec{y}\in W\quad
+    \lambda\vec{x}+\mu\vec{y}\in W
+  \end{equation*}
+\end{Def}
+Si noti che $(W,+)$ è un sottgruppo di $V$ rispetto alla somma. Si noti anche che il
+vettore nullo di $V$ appartiene ad ogni sottospazio vettoriale $W$ di $V$, infatti
+$\lambda\vec{x}\in W\quad\lambda=0\implies\lambda\vec{x}=\vec{o}\in W$.
+
+\begin{SubDef}{Sottospazi impropri}
+  Ogni spazio vettoriale ha almeno due sottospazi vettoriali: se stesso e $\{\vec{o}\}$.
+\end{SubDef}
+
+Si noti anche che se $W$ è un sottospazio vettoriale, $\vec{x}\in W\implies-\vec{x}\in
+W$.
+
+\subsubsection{Esempio fondamentale di sottospazio vettoriale}%
+\label{ssub:esempio_fondamentale_di_sottospazio_vettoriale}
+
+Si prenda l'insieme delle soluzioni di un sistema lineare omogeneo di $m$ equazioni in
+$n$ incognite. L'insieme è un sottospazio vettoriale di $\mathbb{R}^n$. In generale
+l'insieme di soluzioni di $AX=B$ è un sottospazio vettoriale di $\mathbb{R}^n$ se e solo
+se il sistema è omogeneo.
+
+\begin{Def}{Nullspace}
+  Sia $AX=O$ un sistema lineare omogeneo con $A\in\mathbb{R}^{m,n}$ e
+  $X=
+  \begin{pmatrix}
+    X_1\\\vdots\\X_n
+  \end{pmatrix}\in\mathbb{R}^{n,1}$. Allora
+  \begin{equation*}
+    N(A)\bydef \left\{ X\in\mathbb{R}^{n,1}\Setsuchthat AX = O
+    \right\}\subseteq\mathbb{R}^n
+  \end{equation*}
+  si definisce \textbf{nullspace} di $A$ che contiene l'insieme delle soluzioni.
+\end{Def}
+
+Il nullspace è uno sottospazio vettoriale in quanto
+$\forall\lambda,\mu\in\mathbb{R}\;\forall X,Y\in N(A)\quad \lambda X+\mu Y\in N(A)$.
+Infatti si ha che $A(\lambda X+\mu Y) = O = \lambda AX+\mu (AY)$ in quanto sia $X$ che
+$Y$ sono soluzioni.
+
+\subsection{Esempi di sottospazi vettoriali nello spazio delle matrici}%
+\label{sub:esempi_di_sottospazi_vettoriali_nello_spazio_dell_matrici}
+
+\begin{Def}{Insieme delle matrici diagonali}
+  \begin{equation*}
+    \mathscr{D}\left( \mathbb{R}^{n,n} \right) \bydef \left\{ D =
+      \begin{pmatrix}
+        d_1 & \cdots & 0\\
+        0 & \ddots & \vdots\\
+        0 & 0 & d_n
+      \end{pmatrix}\in\mathbb{R}^{n,n}
+      \Setsuchthat d_i\in\mathbb{R}^{n,n}
+    \right\}
+  \end{equation*}
+  È uno sottospazio vettoriale in quanto combinazioni lineari di matrici diagonali, sono
+  ancora matrici diagonali.
+\end{Def}
+
+\begin{Def}{Insieme delle matrici triangolari superiori e inferiori}
+    \begin{equation*}
+      \tau \left( \mathbb{R}^{n,n} \right)\bydef \left\{
+        \begin{pmatrix}
+          a_{11} & \cdots & \cdots & a_{1n}\\
+          0 & a_{22} & \cdots & a_{2n}\\
+          \vdots & \cdots & \ddots & \vdots\\
+          0 & \cdots & 0 & a_{nn}
+        \end{pmatrix}\in\mathbb{R}^{n,n}
+        \Setsuchthat a_{ij}\in\mathbb{R}
+      \right\}
+    \end{equation*}
+    e
+    \begin{equation*}
+      \tau \left( \mathbb{R}^{n,n} \right)\bydef \left\{
+        \begin{pmatrix}
+          a_{11} & 0 & \cdots & 0\\
+          \vdots & a_{22} & 0 & \vdots\\
+          \vdots & \cdots & \ddots & \vdots\\
+          a_{n1} & \cdots & \cdots & a_{nn}
+        \end{pmatrix}\in\mathbb{R}^{n,n}
+        \Setsuchthat a_{ij}\in\mathbb{R}
+      \right\}
+    \end{equation*}
+    sono sottospazi vettoriali di $\mathbb{R}^{n,n}$.
+\end{Def}
+
+\begin{Def}{Insieme delle matrici simmetriche}
+  \begin{equation*}
+    \mathscr{S}\left( \mathbb{R}^{n,n} \right)\bydef \left\{A\in\mathbb{R}^{n,n}\Setsuchthat
+    \transp A = A\right\}
+  \end{equation*}
+  è uno sottospazio vettoriale di $\mathbb{R}^{n,n}$.
+\end{Def}
+
+\begin{Def}{Insieme delle matrici antisimmetriche}
+  \begin{equation*}
+    \mathscr{S}\left( \mathbb{R}^{n,n} \right)\bydef \left\{A\in\mathbb{R}^{n,n}\Setsuchthat
+    \transp A = -A\right\}
+  \end{equation*}
+  è un sottospazio vettoriale di $\mathbb{R}^{n,n}$.
+\end{Def}
+
+\begin{Def}{Insieme delle matrici ortogonali reali}
+  \begin{equation*}
+    \mathscr{O}(n,\mathbb{R})\bydef \left\{ A\in\mathbb{R}^{n,n}\Setsuchthat A\transp A
+    = I = \transp A A\right\}
+  \end{equation*}
+  \textbf{non} è uno sottospazio vettoriale di $\mathbb{R}^{n,n}$ in quanto $O\notin
+  O(n,\mathbb{R})$.
+\end{Def}
