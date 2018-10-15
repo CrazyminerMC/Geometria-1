@@ -196,7 +196,7 @@ $\forall\lambda,\mu\in\mathbb{R}\;\forall X,Y\in N(A)\quad \lambda X+\mu Y\in N(
 Infatti si ha che $A(\lambda X+\mu Y) = O = \lambda AX+\mu (AY)$ in quanto sia $X$ che
 $Y$ sono soluzioni.
 
-\subsection{Esempi di sottospazi vettoriali nello spazio delle matrici}%
+\subsubsection{Esempi di sottospazi vettoriali nello spazio delle matrici}%
 \label{sub:esempi_di_sottospazi_vettoriali_nello_spazio_dell_matrici}
 
 \begin{Def}{Insieme delle matrici diagonali}
@@ -265,3 +265,151 @@ $Y$ sono soluzioni.
   \textbf{non} è uno sottospazio vettoriale di $\mathbb{R}^{n,n}$ in quanto $O\notin
   O(n,\mathbb{R})$.
 \end{Def}
+
+\subsection{Combinazioni lineari}%
+\label{sub:combinazioni_lineari}
+
+\begin{Def}{Combinazione lineare}
+  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di uno spazio vettoriale $V$ su
+  $\mathbb{K}$, si dice che un vettore $\vec{x}$ è una combinazione lineare dei vettori
+  $\vec{v_1},\ldots,\vec{v_l}$ se esistono $x_1,\ldots,x_l\in\mathbb{K}$ tali che
+  $\vec{x}=x_1\vec{v_1}+\cdots+x_l\vec{v_l}$. $x_i$ si dice coefficiente.
+\end{Def}
+
+\begin{Def}{Insieme delle combinazioni lineari}
+  Fissando i vettori $\vec{v_1},\ldots,\vec{v_2}$, si definisce
+  \begin{equation*}
+    \mathscr{L}(\vec{v_1},\ldots,\vec{v_l})\bydef \left\{
+    x_1\vec{v_1}+\cdots+x_l\vec{v_l} \Setsuchthat x_i\in\mathbb{K},\;i=1,\ldots,l \right\}
+  \end{equation*}
+\end{Def}
+
+\begin{Def}{Sistema di generatori di $\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$}
+  Il sistema di generatori è l'insieme $\{x_1\vec{v_1},\ldots,x_l\vec{v_l}\}$.
+\end{Def}
+
+\begin{Thm}{Sottospazio delle combinazioni lineari}
+  $\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$ è un sottospazio vettoriale di $V$ ed è il
+  più piccolo sottospazio vettoriale di $V$ a contenere i vettori
+  $\vec{v_1},\ldots,\vec{v_l}$.
+\end{Thm}
+
+\begin{Def}{Sistema di generatori di un sottospazio}
+  Siano $\vec{v_1},\ldots,\vec{v_l}$ vettori di $V$. Si dice che un sottospazio
+  vettoriale $W$ di $V$ ha come sistema di generatori $\{\vec{v_1},\ldots,\vec{v_l}\}$
+  se $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$.
+\end{Def}
+
+\begin{Thm}{Modifiche ai generatori}
+  Detto $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$, si possono aggiungere o sostituire
+  più generatori di $W$ con loro combinazioni lineari.
+\end{Thm}
+
+Come conseguenza di questo teorema si ha che $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$
+ha infiniti sistemi generatori.
+
+\begin{Def}{Spazi finitiamente generati}
+  Uno spazio vettoriale $V$ si dice finitamente generato se esistono $l$ vettori
+  $\vec{v_1},\ldots,\vec{v_l}$ di $V$ tali che $V=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l}
+  )$.
+\end{Def}
+
+\begin{Def}{Sottospazi finitiamente generati}
+  Un sottospazio vettoriale $W$ si dice finitamente generato se esistono $l$ vettori
+  $\vec{v_1},\ldots,\vec{v_l}$ di $W$ tali che $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l}
+  )$.
+\end{Def}
+
+\subsubsection{Esempi di spazi finitamente generati}%
+\label{ssub:esempi_di_spazi_finitamente_generati}
+
+$\mathbb{R}^n$ è finitamente generato, in quanto possiamo definire
+$\vec{e_1}=(1,0,\ldots,0)$, $\vec{e_i}=(0,\ldots,1,\ldots,0)$ dove l'$1$ è all'$i$-esimo
+posto e $\vec{e_n}=(0,\ldots,1)$. In questo modo una qualsiasi $n$-upla la si può
+scrivere come $(x_1,\ldots,x_n)=x_1\vec{e_1}+\cdots+x_n\vec{e_n}$.\\
+Analogamente anche $\mathbb{R}^{m,n}$ è finitamente generato, creando delle matrici
+nello stesso modo.
+
+\subsubsection{Dipendenza lineare}%
+\label{sub:dipendenza_lineare}
+
+\begin{Def}{Vettori linearmente indipendenti}
+  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$, si dicono
+  linearmente indipendenti se l'unica loro combinazioni lineare uguale a $\vec{o}$ è
+  quella che ha coefficienti tutti nulli.
+\end{Def}
+
+\begin{SubDef}{Insieme libero}
+  L'insieme di vettori linearmente indipendenti è un insieme libero.
+\end{SubDef}
+
+\begin{Def}{Vettori linearmente dipendenti}
+  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$, si dicono
+  linearmente dipendenti se esiste almeno una combinazione lineare uguale a $\vec{o}$ a
+  coefficienti non tutti nulli.
+\end{Def}
+
+\begin{Thm}{Dipendenza lineare e combinazioni lineari}
+  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$ essi sono
+  linearmente dipendenti se e solo se uno è combinazione lineare degli altri.
+\end{Thm}
+
+\begin{proof}
+  Essendo un se e solo se, si devono dimostrare entrambe le implicazioni. Dimostrando
+  $\Rightarrow$, si può dire per ipotesi che i vettori sono linearmente indipendenti, e
+  quindi
+  \begin{equation*}
+    \exists x_1\vec{v_1}+\cdots+x_l\vec{v_l}=\vec{o}\qq{con} x_1\neq0
+  \end{equation*}
+  Isolando $\vec{v_1}$ si dimostra
+  \begin{equation*}
+    \vec{v_1}= - \frac{x_2}{x_1}\vec{v_1}-\cdots-\frac{x_l}{x_1}\vec{v_l}
+  \end{equation*}
+  L'altra implicazione ($\Leftarrow$) si dimostra anlogamente. Per ipotesi se
+  \begin{equation*}
+    \vec{v_i}=\lambda_1\vec{v_1}+\cdots+\lambda_{i-1}\vec{v_{i-1}}+
+    \lambda_{i+1}\vec{v_{i+1}}+\cdots+\lambda_l\vec{v_l}
+  \end{equation*}
+  allora
+  \begin{equation*}
+    \vec{o} =
+    \lambda_1\vec{v_1}+\cdots\lambda_{i-1}\vec{v_i-1}-\vec{v_i}+\lambda_{i+1}\vec{v_i+1}
+    +\cdots+\lambda_l\vec{v_l}
+  \end{equation*}
+\end{proof}
+
+\subsection{Base di uno spazio vettoriale}%
+\label{sub:base_di_uno_spazio_vettoriale}
+
+\begin{Def}{Base}
+  Un insieme finito e ordinato di $V$ denotato con
+  $\mathscr{B}(\vec{v_1},\ldots,\vec{v_n})$ è detto base di $V$ se è insieme libero e un
+  sistema di generatori.
+\end{Def}
+
+\begin{SubDef}{Basi canoniche o standard}
+  In $\mathbb{R}^n$,
+  \begin{equation*}
+    \mathscr{B}\bigl((1,0,\ldots,0),(0,1,0,\ldots,0),\ldots,(0,\ldots,0,1)\bigr)
+  \end{equation*}
+  è detto base canonica o standard.\\[\baselineskip]
+  In $\mathbb{R}^{m,n}$ la base canonica o standard è
+  \begin{equation*}
+    \mathscr{B} \left(
+      \begin{pmatrix}
+        1 & 0 &\cdots\\
+        0 & 0 & \cdots\\
+        \vdots & \vdots & \cdots
+      \end{pmatrix},\ldots,
+      \begin{pmatrix}
+        0 & \cdots & 0\\
+        \vdots & 1 & \vdots\\
+        0 & \cdots & 0
+      \end{pmatrix}
+    \right)
+  \end{equation*}
+  Ovvero sono le matrici che al posto di indici $_{ij}$ è $1$, ovunque è
+  $0$.\\[\baselineskip]
+  Su $\mathbb{R}_n[x]$ (ovvero l'insieem dei polinomi reali in $x$ con grado minore o
+  uguale a $n$) una base canonica o standard è $(1,x,x^2,\ldots,x^n)$.
+\end{SubDef}
