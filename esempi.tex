@@ -14,7 +14,6 @@ mostrano un'applicazione pratica della teoria.
 \label{ssub:numero_di_soluzioni_di_un_sistema}
 
 \paragraph{Esempio 1}%
-\label{par:esempio_1}
 
 \textbf{Si discuta il numero di soluzioni del seguente sistema}
 \begin{equation*}
@@ -74,40 +73,40 @@ fissate, una è libera di modificarsi. Ovvero ci sono $\infty^1$ soluzioni.
 Si può riscrivere il sistema in forma matriciale con la matrice completa
 \begin{equation*}
   (A\vert B) =
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     k & 1 & 1 & 1\\
     1 & k & 1 & 1\\
     1 & 1 & k & h
-    \end{pmatrix}
+  \end{pmatrix}
 \end{equation*}
 Possiamo ora cercare di ridurre la matrice
 \begin{equation*}
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     k & 1 & 1 & 1\\
     1 & k & 1 & 1\\
     1 & 1 & k & h
-    \end{pmatrix}
+  \end{pmatrix}
   \xrightarrow{R_1\leftrightarrow R_2}
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     k & 1 & 1 & 1\\
     1 & 1 & k & h
-    \end{pmatrix}
+  \end{pmatrix}
   \xrightarrow{\substack{R_2\to R_2-kR_1\\ R_3\to R_3-R_1}}
   \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1-k & 1-k & 1-k\\
     0 & 1-k & 1-k & h-1
-    \end{pmatrix}
+  \end{pmatrix}
 \end{equation*}
 A questo punto si distinguono due casi, se $1-k = 0$ o $1-k\neq0$.\\
 Se $1-k=0\implies k=1$, sostituendo
 \begin{equation*}
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     1 & 1 & 1 & 1\\
     0 & 0 & 0 & 0\\
     0 & 0 & 0 & h-1
-    \end{pmatrix}
+  \end{pmatrix}
 \end{equation*}
 Per questa matrice ridotta per righe si ha $\rank(A)=1$. Per
 il~\autoref{thm:lineare_rouche-capelli} si distinguono gli ultimi due casi per $h$. Se
@@ -116,30 +115,30 @@ soluzioni in quanto $\rank(A\vert B) = 2 \neq \rank(A)$.\\
 Se $1-k\neq0\implies k\neq1$ i può dividere la seconda e terza riga per $\frac{1}{1-k}$
 ottenendo
 \begin{equation*}
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1+k & 1 & 1\\
     0 & 1 & -1 & \frac{h-1}{1-k}
-    \end{pmatrix}
+  \end{pmatrix}
 \end{equation*}
 Andando a sommare $R_3$ con $R_2$, si ha
 \begin{equation*}
-    \begin{pmatrix}[ccc|c]
+  \begin{pmatrix}[ccc|c]
     1 & k & 1 & 1\\
     0 & 1+k & 1 & 1\\
     0 & 2+k & 0 & \frac{h-1}{1-k}+1
-    \end{pmatrix}
+  \end{pmatrix}
 \end{equation*}
 A questo punto abbiamo due casi: $k=-2$ e non. Immediatamente si vede che $k\neq-2$, si
 ha che $\rank(A\vert B) = 3 \rank(A)$ e quindi la soluzione è unica per il
 teorema~\autoref{thm:lineare_rouche-capelli}.\\
 Se invece $k=-2$ si può riscrivere
 \begin{equation*}
-    \begin{pmatrix}[ccc|c]
-      1 & -2 & 1 & 1\\
-      0 & -1 & 1 & 1\\
-      0 & 0 & 0 & \frac{h+2}{3}
-    \end{pmatrix}
+  \begin{pmatrix}[ccc|c]
+    1 & -2 & 1 & 1\\
+    0 & -1 & 1 & 1\\
+    0 & 0 & 0 & \frac{h+2}{3}
+  \end{pmatrix}
 \end{equation*}
 Si distinguono due casi a seconda di $h$. Se $h=-2$ o meno. Si vede immediatamente che
 se $h\neq-2$ si ha che $\rank(A\vert B)=3\neq2$ e quindi non ci sono soluzioni per
@@ -165,3 +164,106 @@ Riassumendo
     \end{cases}
   \end{cases}
 \end{equation*}
+
+\subsection{\nameref{sec:spazio_vettoriale}}%
+
+\subsubsection{\nameref{sub:base_di_uno_spazio_vettoriale}}%
+
+\paragraph{Esempio 1}%
+
+\textbf{Dato l'insieme delle matrici antisimmetriche in $\mathbb{R}^3$, dato}
+\begin{align*}
+  G &= \left\{
+    A_1=
+    \begin{pmatrix}
+      0 & 1 & 2\\
+      -1 & 0 & 3\\
+      2 & -3 & 0
+    \end{pmatrix},
+    A_2=
+    \begin{pmatrix}
+      0 & 0 & 1\\
+      0 & 0 & -1\\
+      -1 & 1 & 0
+    \end{pmatrix},
+    A_3=
+    \begin{pmatrix}
+      0 & 0 & 0\\
+      0 & 0 & 5\\
+      0 & -5 & 0
+    \end{pmatrix},\right.\\
+    &\qquad\left.
+    A_4=
+    \mqty(\zmat{3}{3}),
+    A_5=
+    \begin{pmatrix}
+      0 & -1 & 2\\
+      1 & 0 & 0\\
+      -2 & 0 & 0
+    \end{pmatrix}
+  \right\}
+\end{align*}
+\textbf{trovare una base con il metodo degli scarti successivi.}\\
+Immediatamente possiamo scartare $A_4$ in quanto è la matrice nulla che in una base non
+può essere.\\
+Consideriamo quindi $\{A_1\}$ e $\{A_1,A_2\}$. Si deve controllare se $\{A_1,A_2\}$ è
+libero o no. Si scrive quindi
+\begin{equation*}
+  \begin{pmatrix}
+    0 & 1 & 2\\
+    -1 & 0 & 3\\
+    2 & -3 & 0
+  \end{pmatrix} =
+  \lambda
+  \begin{pmatrix}
+    0 & 0 & 1\\
+    0 & 0 & -1\\
+    -1 & 1 & 0
+  \end{pmatrix}
+\end{equation*}
+Che è equivalente al sistema
+\begin{equation*}
+  \begin{cases}
+    1=\lambda\cdot0\\
+    2=\lambda\\
+    3=-\lambda
+  \end{cases}
+\end{equation*}
+che ovviamente non è compatibile. Consideriamo quindi $\{A_1,A_2,A_3\}$, verificando
+nello stesso modo è compatibile. Consideriamo infine $\{A_1,A_2,A_3,A_5\}$ in quanto
+$A_3$ non puoi scriverlo come combinazione lineare di $A_1$ e $A_2$.
+\begin{equation*}
+  \begin{pmatrix}
+    0 & -1 & 2\\
+    1 & 0 & 0\\
+    -2 & 0 & 0
+  \end{pmatrix} =
+  \lambda_1
+  \begin{pmatrix}
+    0 & 1 & 2\\
+    -1 & 0 & 3\\
+    -2 & -3 & 0
+  \end{pmatrix}
+  +\lambda_2
+  \begin{pmatrix}
+    0 & 0 & 1\\
+    0 & 0 & -1\\
+    -1 & 1 & 0
+  \end{pmatrix}
+  +\lambda_3
+  \begin{pmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 5\\
+    0 & -5 & 0
+  \end{pmatrix}
+\end{equation*}
+Questo è equivalente a scrivere
+\begin{equation*}
+  \begin{cases}
+    -1=\lambda_1\\
+    2=2\lambda_1+\lambda_2\\
+    0=3\lambda_1-\lambda_2+5\lambda3
+  \end{cases}
+\end{equation*}
+che ha come soluzione $(-1,4,7/5)$. Da questo si deduce che $\{A_1,A_2,A_3\}$ è una base
+per $\mathscr{A}(\mathbb{R}^3)$.
