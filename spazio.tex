@@ -413,3 +413,131 @@ nello stesso modo.
   Su $\mathbb{R}_n[x]$ (ovvero l'insieem dei polinomi reali in $x$ con grado minore o
   uguale a $n$) una base canonica o standard è $(1,x,x^2,\ldots,x^n)$.
 \end{SubDef}
+
+\begin{Thm}{Caratterizzazione di uno spazio vettoriale}
+  Sia $\mathscr{B}=(\vec{v_1},\ldots,\vec{v_n})$ una base di $V$, allora ogni $x\in V$
+  si scrive in un modo unico come combinazione lineare dei vettori $\vec{v_1},\ldots,
+  \vec{v_n}$ come $\vec{v}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ e $(x_1,\ldots,x_n)\in
+  \mathbb{K}^n$.\\
+  Viceversa se si hanno $n$ vettori $\{\vec{v_1},\ldots,\vec{v_n}\}$ ed essi sono
+  l'insieme di tutti i vettri in $V$ tali che $\forall \vec{x}\in V$ si ha
+  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$, allora $(\vec{v_1},\ldots,\vec{v_n})$ è
+  una base di $V$.
+\end{Thm}
+
+\begin{proof}
+  Essendo diviso in due punti, dimostriamo il primo. Se $\mathscr{B}$ è una base, allora
+  $\{\vec{v_1},\ldots,\vec{v_n}\}$ è un sistema di generatori. Allora
+  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$. Se la decomposizione non è unica, allora
+  $\vec{x}=x'_1\vec{v_1}+\cdots+x'_n\vec{v_n}$ con $x'_1\neq0$ si può riscrivere come
+  $(x'_1-x_1)\vec{v_1}+\cdots+(x'_n-x_n)\vec{x_n}=\vec{o}$ ma questo è un assurdo in
+  quanto $x'_1-x_1\neq0$ contro l'ipotesi che $\vec{v_1},\ldots,\vec{v_n}$ siano
+  linearmente indipendenti.\\
+  Per il secondo punto, sappiamo che $\{\vec{v_1},\ldots,\vec{v_n}\}$ è un sistema di
+  generatori. Se si prende $\lambda_1\vec{v_1}+\cdots+\lambda_n\vec{v_n}=\vec{o}$, lo si
+  scrive in odo unico come combinazione lineare di $\vec{v_1},\ldots,\vec{v_n}$ per
+  ipotesi. Quindi $\lambda_1=\cdots=\lambda_n=0$.
+\end{proof}
+
+\begin{Def}{Componenti di un vettore}
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$. Sia $\mathscr{B}=(\vec{v_1},\ldots,
+  \vec{v_n})$ una base fissata di $V$. Allora $\forall \vec{x}\in V$ si ha
+  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ con $x_i\in\mathbb{K}$ e $(x_1,\ldots,x_n)$
+  sono dette componenti di $\vec{x}$ rispetto alla base $\mathscr{B}$. In simboli si
+  scrive ${(\vec{x})}_\mathscr{B}=(x_1,\ldots,x_n)$.
+\end{Def}
+
+\begin{Thm}{Esistenza della base}
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$ finitamente generato e sia
+  $G=\{\vec{w_1},\ldots,\vec{w_l}\}$ un sistema di generatori di $V$. Allora $G$
+  contiene almeno una base.
+\end{Thm}
+
+\begin{proof}
+  Anhe denominato metodo degli scarti successivi, questa dimostrazione permette di
+  trovare una base per uno spazio vettoriale.\\
+  Si tolga il vettore nullo, se presente. Allora si può supporre che ogni vettore non
+  sia nullo. \textbf{Primo passo}: Si consideri l'insieme libero $I_1=\{\vec{w_1}\}$. Se
+  ogni vettore $\vec{w_i}$ con $i=1,\ldots,l$ è linearmente dipendente con $\vec{w_1}$
+  allora $\vec{w_1}$ è una base di $V$ perché $\mathscr{L}(\vec{w_1})=V$ e $\{\vec{w_1}\}$
+  è libero. Se invece $\mathscr{L}(\vec{w_1})\neq V$, si considera il primo vettore di
+  $V$ che sia linearmente indipendente con $\vec{w_1}$. Ad esempio
+  $\vec{w_2}\notin\mathscr{L}(\vec{w_1})$. \textbf{Secondo passo}: Si consideri
+  l'insieme libero $I_2=\{\vec{v_1},\vec{w_2}\}$. Si hanno due possibilità, ogni
+  $\vec{w_i}$ con $i\neq1,2$ è combinazione lineare di $\vec{w_1},\vec{w_2}$ e quindi
+  $\{\vec{w_1},\vec{w_2}\}$ è una base di $V$ in quanto
+  $\mathscr{L}(\vec{w_1},\vec{w_2})=V$. In caso contrario, esiste almeno un $\vec{w_i}$
+  con $i\neq1,2$ che è linearmente indipendente con $\vec{w_1},\vec{w_2}$. \textbf{Terzo
+  passo}: Si consideri l'insieme libero $I_3=\{\vec{w_1},\vec{w_2},\vec{w_3}\}$. Si
+  procede come nel secondo passo.\\
+  Il procedimento termina dopo un numero finito di passi, al più $l$. Da $G$ si
+  costruisce un insieme libero di generatori di $V$ e quindi una base di $V$.
+\end{proof}
+
+\begin{Thm}{Lemma di Steintz}
+  Sia $\mathscr{B}=(\vec{v_1},\ldots,\vec{v_n})$ una base di $V$ su $\mathbb{K}$ e sia
+  $I=\{\vec{u_1},\ldots,\vec{u_p}\}$ un insieme libero.  Allora $p\leq n$.
+\end{Thm}
+
+\begin{proof}
+  Siano ${(\vec{u_1})}_\mathscr{B}=(\lambda_1,\ldots,\lambda_n)$ i componenti. $I$ è
+  libero, quindi $\vec{u_1}\neq\vec{o}$. Ciò cimplica che almeno una delle componenti
+  $\lambda_i\neq0$. Supponiamo senza perdita di generalità che sia $\lambda_1\neq0$.
+  Allora
+  \begin{equation}\label{eq:spazio_steintz_dim}
+    \vec{u_1}=\lambda_1\vec{v_1}+\cdots+\lambda_n\vec{v_n}\tag{$\star$}
+  \end{equation}
+  Isolando $\vec{v_1}$ otteniamo
+  \begin{equation*}
+    \vec{v_1} =
+    \frac{1}{\lambda_1}\vec{u_1}-\frac{\lambda_2}{\lambda_1}\vec{v_2}-\cdots-
+    \frac{\lambda_n}{\lambda_1}\vec{v_n}
+  \end{equation*}
+  Quindi $\vec{v_1}\in\mathscr{L}(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$. Si nota che
+  $\{\vec{u_1},\vec{v_2},\ldots,\vec{v_n}\}$ è ancora una base di $V$ in quanto è un
+  sistema di generatori linearmente indipendenti.\\
+  Per~\eqref{eq:spazio_steintz_dim}, sappiamo $\forall x\in V$ si ha
+  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ dato che $\mathscr{B}$ è una base di $V$.
+  Sostituendo si ottiene
+  \begin{equation*}
+    \vec{x}=x_1 \left(
+    \frac{1}{\lambda_1}\vec{v_1}-\frac{\lambda_2}{\lambda1}\vec{v_2}-\cdots-
+  \frac{\lambda_n}{\lambda_1}\vec{v_n}\right)+\cdots+x_n\vec{v_n}
+  \end{equation*}
+  Quindi $x\in\mathscr{L}(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$. Allora sicuramente
+  $\{\vec{u_1},\vec{v_2},\ldots,\vec{v_n}\}$ è un sistema di generatori di $V$. È anche
+  libero in quanto è formato da $\{\vec{v_2}\,\ldots,\vec{v_n}\}$ che è libero e
+  $\vec{u_1}\notin\mathscr{L}(\vec{v_2},\ldots,\vec{v_n})$. Definiamo
+  $\mathscr{B}_1(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$.\\
+  Iterando il procedimento considerando $\vec{u_2}\in I$ si scrive $\vec{u_2}$ come
+  combinazione lineare di vettori della base $\mathscr{B}_1$.
+  \begin{equation*}
+    \vec{u_2}=\gamma_1\vec{u_1}+\gamma_2\vec{v_2}+\cdots+\gamma_n\vec{v_n}
+  \end{equation*}
+  Poiché $\vec{u_2}\neq\vec{o}$, almeno uno dei coefficienti non è nullo. Poiché
+  $\{\vec{u_1},\vec{u_2}\}$ è libero per costruzione, non si può avere $\gamma_1\neq0$ e
+  $\gamma_2=\cdots=\gamma_n=0$. Si può supporre che $\gamma_2\neq0$. Possiamo scrivere
+  $\vec{v_2}$ come combinazione lineare di
+  $\vec{u_1},\vec{u_2},\vec{v_3},\ldots,\vec{v_n}$ e si prova che
+  $\mathscr{B}_2(\vec{u_1},\vec{u_2},\vec{v_3},\ldots,\vec{v_n})$ è una base di $V$. Si
+  procede poi con $\vec{v_3}$.\\
+  Il procedimento termina se o si sono estrtti tutti i vettori di $I$ e sono stati
+  inseriti tutti i vettori di $I$ nella base (ovvero $p\leq n$) oppure si sono estratti
+  i vettori di $\mathscr{B}$ e rimangono ancora vettori di $I$ (ovvero
+  $\mathscr{B}\subset I$) ma ciò è un assurdo perché $\mathscr{B}$ è una base e se fosse
+  vero, gli elementi di $I$ in più sarebbero linearmente indipendenti ma ciò è
+  impossibile.
+\end{proof}
+
+\begin{SubThm}{Numero di elementi di una base}
+  Tutte le basi di uno spazio vettoriale finitamente gnerato hanno lo stesso numero di
+  vettori.
+\end{SubThm}
+
+\begin{proof}
+  Per assurdo $\mathscr{B}(\vec{v_1},\ldots,\vec{v_n})$ e
+  $\mathscr{B}'(\vec{w_1},\ldots,\vec{w_l})$. Allora se consideriamo $\mathscr{B}$ base,
+  $\mathscr{B}'$ è un insieme libero e quindi $n\geq l$. Se invece consideriamo
+  $\mathscr{B}'$ base e $\mathscr{B}$ un insieme libero, si ha $n\leq l$ da cui si
+  deduce che $n=l$.
+\end{proof}
