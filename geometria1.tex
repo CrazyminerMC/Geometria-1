@@ -38,11 +38,14 @@ pdfcreator={pdflatex with hyperref}]{hyperref}
 
 \input{teoremi.tex}
 \input{definizioni.tex}
+\input{es.tex}
 
 \newcommand{\innerDefautorefname}{Definizione}
 \newcommand{\innerThmautorefname}{Teorema}
+\newcommand{\innerExautorefname}{Esempio}
 \newcommand{\innerSubDefautorefname}{Definizione}
 \newcommand{\innerSubThmautorefname}{Teorema}
+\newcommand{\innerSubExautorefname}{Esempio}
 
 \newcommand{\envargument}{}
 \newenvironment{Def}[1]
@@ -59,6 +62,14 @@ pdfcreator={pdflatex with hyperref}]{hyperref}
 \newenvironment{SubThm}[1]
  {\renewcommand{\envargumenta}{#1}\innerSubThm}
  {\endinnerSubThm}
+
+\newcommand{\envargumentb}{}
+\newenvironment{Ex}[1]
+ {\renewcommand{\envargumentb}{#1}\innerEx}
+ {\endinnerEx}
+\newenvironment{SubEx}[1]
+ {\renewcommand{\envargumentb}{#1}\innerSubEx}
+ {\endinnerSubEx}
 
 \begin{document}
 

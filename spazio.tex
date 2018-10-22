@@ -101,20 +101,20 @@ In un campo vettoriale su $\mathbb{K}$ valgono le seguenti proprietà
 \begin{enumerate}
   \item Vettore nullo unico
     \begin{proof}
-      Supponiamo per assurdo che esistano $\vec{o}$ e $\vec{o'}$ nulli in modo che
-      $\vec{o}\neq\vec{o'}$. Allora si ha $\vec{o}=\vec{o}+\vec{o'}$ sfruttando il fatto
+      Supponiamo per assurdo che esistano $\vec{o}$ e $\vec{o}'$ nulli in modo che
+      $\vec{o}\neq\vec{o}'$. Allora si ha $\vec{o}=\vec{o}+\vec{o}'$ sfruttando il fatto
       che $\vec{o'}$ è un vettore nullo. Analogamente si ha che
-      $\vec{o'}=\vec{o'}+\vec{o}$. Da queste due relazioni si deduce che
-      $\vec{o'}=\vec{o}$ che va contro l'ipotesi iniziale.
+      $\vec{o}'=\vec{o}'+\vec{o}$. Da queste due relazioni si deduce che
+      $\vec{o}'=\vec{o}$ che va contro l'ipotesi iniziale.
     \end{proof}
   \item Opposto unico
     \begin{proof}
-      Supponiamo per assurdo che esistano $\vec{x_1}\neq\vec{x_2}$ oposti di $\vec{x}$.
-      Allora possiamo scrivere $(\vec{x}+\vec{x_1})+\vec{x_2} =
-      \vec{o}+\vec{x_2}=\vec{x_2}$. Analogamente si ha che
-      $(\vec{x}+\vec{x_1})+\vec{x_2}=\vec{x}+(\vec{x_2}+\vec{x_1})=(\vec{x}+\vec{x_2})
-      +\vec{x_1}=\vec{o}+\vec{x_1}=\vec{x_1}$. Si deduce quindi che
-      $\vec{x_1}=\vec{x_2}$ ma per ipotesi questo non può essere.
+      Supponiamo per assurdo che esistano $\vec{x}_1\neq\vec{x}_2$ oposti di $\vec{x}$.
+      Allora possiamo scrivere $(\vec{x}+\vec{x}_1)+\vec{x}_2 =
+      \vec{o}+\vec{x}_2=\vec{x}_2$. Analogamente si ha che
+      $(\vec{x}+\vec{x}_1)+\vec{x_2}=\vec{x}+(\vec{x}_2+\vec{x}_1)=(\vec{x}+\vec{x}_2)
+      +\vec{x}_1=\vec{o}+\vec{x_1}=\vec{x}_1$. Si deduce quindi che
+      $\vec{x}_1=\vec{x}_2$ ma per ipotesi questo non può essere.
     \end{proof}
   \item Se per $\vec{x}$, $\vec{y}$, $\vec{z}$ si ha $\vec{x}+\vec{y}=\vec{x}+\vec{z}$
     allora $\vec{y}=\vec{z}$
@@ -199,7 +199,7 @@ $Y$ sono soluzioni.
 \subsubsection{Esempi di sottospazi vettoriali nello spazio delle matrici}%
 \label{sub:esempi_di_sottospazi_vettoriali_nello_spazio_dell_matrici}
 
-\begin{Def}{Insieme delle matrici diagonali}
+\begin{Ex}{Insieme delle matrici diagonali}
   \begin{equation*}
     \mathscr{D}\left( \mathbb{R}^{n,n} \right) \bydef \left\{ D =
       \begin{pmatrix}
@@ -207,14 +207,14 @@ $Y$ sono soluzioni.
         0 & \ddots & \vdots\\
         0 & 0 & d_n
       \end{pmatrix}\in\mathbb{R}^{n,n}
-      \Setsuchthat d_i\in\mathbb{R}^{n,n}
+      \Setsuchthat d_i\in\mathbb{R}
     \right\}
   \end{equation*}
   È uno sottospazio vettoriale in quanto combinazioni lineari di matrici diagonali, sono
   ancora matrici diagonali.
-\end{Def}
+\end{Ex}
 
-\begin{Def}{Insieme delle matrici triangolari superiori e inferiori}
+\begin{Ex}{Insieme delle matrici triangolari superiori e inferiori}
     \begin{equation*}
       \tau \left( \mathbb{R}^{n,n} \right)\bydef \left\{
         \begin{pmatrix}
@@ -239,84 +239,84 @@ $Y$ sono soluzioni.
       \right\}
     \end{equation*}
     sono sottospazi vettoriali di $\mathbb{R}^{n,n}$.
-\end{Def}
+\end{Ex}
 
-\begin{Def}{Insieme delle matrici simmetriche}
+\begin{Ex}{Insieme delle matrici simmetriche}
   \begin{equation*}
     \mathscr{S}\left( \mathbb{R}^{n,n} \right)\bydef \left\{A\in\mathbb{R}^{n,n}\Setsuchthat
     \transp A = A\right\}
   \end{equation*}
   è uno sottospazio vettoriale di $\mathbb{R}^{n,n}$.
-\end{Def}
+\end{Ex}
 
-\begin{Def}{Insieme delle matrici antisimmetriche}
+\begin{Ex}{Insieme delle matrici antisimmetriche}
   \begin{equation*}
     \mathscr{A}\left( \mathbb{R}^{n,n} \right)\bydef \left\{A\in\mathbb{R}^{n,n}\Setsuchthat
     \transp A = -A\right\}
   \end{equation*}
   è un sottospazio vettoriale di $\mathbb{R}^{n,n}$.
-\end{Def}
+\end{Ex}
 
-\begin{Def}{Insieme delle matrici ortogonali reali}
+\begin{Ex}{Insieme delle matrici ortogonali reali}
   \begin{equation*}
     \mathscr{O}(n,\mathbb{R})\bydef \left\{ A\in\mathbb{R}^{n,n}\Setsuchthat A\transp A
     = I = \transp A A\right\}
   \end{equation*}
   \textbf{non} è uno sottospazio vettoriale di $\mathbb{R}^{n,n}$ in quanto $O\notin
   O(n,\mathbb{R})$.
-\end{Def}
+\end{Ex}
 
 \subsection{Combinazioni lineari}%
 \label{sub:combinazioni_lineari}
 
 \begin{Def}{Combinazione lineare}
-  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di uno spazio vettoriale $V$ su
+  Dati $l$ vettori $\vec{v}_1,\ldots,\vec{v}_l$ di uno spazio vettoriale $V$ su
   $\mathbb{K}$, si dice che un vettore $\vec{x}$ è una combinazione lineare dei vettori
-  $\vec{v_1},\ldots,\vec{v_l}$ se esistono $x_1,\ldots,x_l\in\mathbb{K}$ tali che
-  $\vec{x}=x_1\vec{v_1}+\cdots+x_l\vec{v_l}$. $x_i$ si dice coefficiente.
+  $\vec{v}_1,\ldots,\vec{v}_l$ se esistono $x_1,\ldots,x_l\in\mathbb{K}$ tali che
+  $\vec{x}=x_1\vec{v}_1+\cdots+x_l\vec{v}_l$. $x_i$ si dice coefficiente.
 \end{Def}
 
 \begin{Def}{Insieme delle combinazioni lineari}
-  Fissando i vettori $\vec{v_1},\ldots,\vec{v_2}$, si definisce
+  Fissando i vettori $\vec{v}_1,\ldots,\vec{v}_2$, si definisce
   \begin{equation*}
-    \mathscr{L}(\vec{v_1},\ldots,\vec{v_l})\bydef \left\{
-    x_1\vec{v_1}+\cdots+x_l\vec{v_l} \Setsuchthat x_i\in\mathbb{K},\;i=1,\ldots,l \right\}
+    \mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l)\bydef \left\{
+    x_1\vec{v}_1+\cdots+x_l\vec{v}_l \Setsuchthat x_i\in\mathbb{K},\;i=1,\ldots,l \right\}
   \end{equation*}
 \end{Def}
 
-\begin{Def}{Sistema di generatori di $\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$}
-  Il sistema di generatori è l'insieme $\{x_1\vec{v_1},\ldots,x_l\vec{v_l}\}$.
+\begin{Def}{Sistema di generatori di $\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l)$}
+  Il sistema di generatori è l'insieme $\{x_1\vec{v}_1,\ldots,x_l\vec{v}_l\}$.
 \end{Def}
 
 \begin{Thm}{Sottospazio delle combinazioni lineari}
   $\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$ è un sottospazio vettoriale di $V$ ed è il
   più piccolo sottospazio vettoriale di $V$ a contenere i vettori
-  $\vec{v_1},\ldots,\vec{v_l}$.
+  $\vec{v}_1,\ldots,\vec{v}_l$.
 \end{Thm}
 
 \begin{Def}{Sistema di generatori di un sottospazio}
-  Siano $\vec{v_1},\ldots,\vec{v_l}$ vettori di $V$. Si dice che un sottospazio
-  vettoriale $W$ di $V$ ha come sistema di generatori $\{\vec{v_1},\ldots,\vec{v_l}\}$
-  se $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$.
+  Siano $\vec{v}_1,\ldots,\vec{v}_l$ vettori di $V$. Si dice che un sottospazio
+  vettoriale $W$ di $V$ ha come sistema di generatori $\{\vec{v}_1,\ldots,\vec{v}_l\}$
+  se $W=\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l)$.
 \end{Def}
 
 \begin{Thm}{Modifiche ai generatori}
-  Detto $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$, si possono aggiungere o sostituire
+  Detto $W=\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l)$, si possono aggiungere o sostituire
   più generatori di $W$ con loro combinazioni lineari.
 \end{Thm}
 
-Come conseguenza di questo teorema si ha che $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l})$
+Come conseguenza di questo teorema si ha che $W=\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l)$
 ha infiniti sistemi generatori.
 
-\begin{Def}{Spazi finitiamente generati}
+\begin{Def}{Spazi finitamente generati}
   Uno spazio vettoriale $V$ si dice finitamente generato se esistono $l$ vettori
-  $\vec{v_1},\ldots,\vec{v_l}$ di $V$ tali che $V=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l}
+  $\vec{v}_1,\ldots,\vec{v}_l$ di $V$ tali che $V=\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l
   )$.
 \end{Def}
 
-\begin{Def}{Sottospazi finitiamente generati}
+\begin{Def}{Sottospazi finitamente generati}
   Un sottospazio vettoriale $W$ si dice finitamente generato se esistono $l$ vettori
-  $\vec{v_1},\ldots,\vec{v_l}$ di $W$ tali che $W=\mathscr{L}(\vec{v_1},\ldots,\vec{v_l}
+  $\vec{v}_1,\ldots,\vec{v}_l$ di $W$ tali che $W=\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_l
   )$.
 \end{Def}
 
@@ -324,9 +324,9 @@ ha infiniti sistemi generatori.
 \label{ssub:esempi_di_spazi_finitamente_generati}
 
 $\mathbb{R}^n$ è finitamente generato, in quanto possiamo definire
-$\vec{e_1}=(1,0,\ldots,0)$, $\vec{e_i}=(0,\ldots,1,\ldots,0)$ dove l'$1$ è all'$i$-esimo
-posto e $\vec{e_n}=(0,\ldots,1)$. In questo modo una qualsiasi $n$-upla la si può
-scrivere come $(x_1,\ldots,x_n)=x_1\vec{e_1}+\cdots+x_n\vec{e_n}$.\\
+$\vec{e}_1=(1,0,\ldots,0)$, $\vec{e}_i=(0,\ldots,1,\ldots,0)$ dove l'$1$ è all'$i$-esimo
+posto e $\vec{e}_n=(0,\ldots,1)$. In questo modo una qualsiasi $n$-upla la si può
+scrivere come $(x_1,\ldots,x_n)=x_1\vec{e_1}+\cdots+x_n\vec{e}_n$.\\
 Analogamente anche $\mathbb{R}^{m,n}$ è finitamente generato, creando delle matrici
 nello stesso modo.
 
@@ -334,7 +334,7 @@ nello stesso modo.
 \label{sub:dipendenza_lineare}
 
 \begin{Def}{Vettori linearmente indipendenti}
-  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$, si dicono
+  Dati $l$ vettori $\vec{v}_1,\ldots,\vec{v}_l$ di $V$ su $\mathbb{K}$, si dicono
   linearmente indipendenti se l'unica loro combinazioni lineare uguale a $\vec{o}$ è
   quella che ha coefficienti tutti nulli.
 \end{Def}
@@ -344,13 +344,13 @@ nello stesso modo.
 \end{SubDef}
 
 \begin{Def}{Vettori linearmente dipendenti}
-  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$, si dicono
+  Dati $l$ vettori $\vec{v}_1,\ldots,\vec{v}_l$ di $V$ su $\mathbb{K}$, si dicono
   linearmente dipendenti se esiste almeno una combinazione lineare uguale a $\vec{o}$ a
   coefficienti non tutti nulli.
 \end{Def}
 
 \begin{Thm}{Dipendenza lineare e combinazioni lineari}
-  Dati $l$ vettori $\vec{v_1},\ldots,\vec{v_l}$ di $V$ su $\mathbb{K}$ essi sono
+  Dati $l$ vettori $\vec{v}_1,\ldots,\vec{v}_l$ di $V$ su $\mathbb{K}$ essi sono
   linearmente dipendenti se e solo se uno è combinazione lineare degli altri.
 \end{Thm}
 
@@ -359,22 +359,22 @@ nello stesso modo.
   $\Rightarrow$, si può dire per ipotesi che i vettori sono linearmente indipendenti, e
   quindi
   \begin{equation*}
-    \exists x_1\vec{v_1}+\cdots+x_l\vec{v_l}=\vec{o}\qq{con} x_1\neq0
+    \exists x_1\vec{v}_1+\cdots+x_l\vec{v}_l=\vec{o}\qq{con} x_1\neq0
   \end{equation*}
   Isolando $\vec{v_1}$ si dimostra
   \begin{equation*}
-    \vec{v_1}= - \frac{x_2}{x_1}\vec{v_1}-\cdots-\frac{x_l}{x_1}\vec{v_l}
+    \vec{v}_1= - \frac{x_2}{x_1}\vec{v}_1-\cdots-\frac{x_l}{x_1}\vec{v}_l
   \end{equation*}
   L'altra implicazione ($\Leftarrow$) si dimostra anlogamente. Per ipotesi se
   \begin{equation*}
-    \vec{v_i}=\lambda_1\vec{v_1}+\cdots+\lambda_{i-1}\vec{v_{i-1}}+
-    \lambda_{i+1}\vec{v_{i+1}}+\cdots+\lambda_l\vec{v_l}
+    \vec{v}_i=\lambda_1\vec{v}_1+\cdots+\lambda_{i-1}\vec{v}_{i-1}+
+    \lambda_{i+1}\vec{v}_{i+1}+\cdots+\lambda_l\vec{v}_l
   \end{equation*}
   allora
   \begin{equation*}
     \vec{o} =
-    \lambda_1\vec{v_1}+\cdots\lambda_{i-1}\vec{v_i-1}-\vec{v_i}+\lambda_{i+1}\vec{v_i+1}
-    +\cdots+\lambda_l\vec{v_l}
+    \lambda_1\vec{v}_1+\cdots\lambda_{i-1}\vec{v}_{i-1}-\vec{v_i}+\lambda_{i+1}\vec{v}_{i+1}
+    +\cdots+\lambda_l\vec{v}_l
   \end{equation*}
 \end{proof}
 
@@ -383,11 +383,11 @@ nello stesso modo.
 
 \begin{Def}{Base}
   Un insieme finito e ordinato di $V$ denotato con
-  $\mathscr{B}(\vec{v_1},\ldots,\vec{v_n})$ è detto base di $V$ se è insieme libero e un
+  $\mathscr{B}(\vec{v_1},\ldots,\vec{v}_n)$ è detto base di $V$ se è insieme libero e un
   sistema di generatori.
 \end{Def}
 
-\begin{SubDef}{Basi canoniche o standard}
+\begin{Ex}{Basi canoniche o standard}
   In $\mathbb{R}^n$,
   \begin{equation*}
     \mathscr{B}\bigl((1,0,\ldots,0),(0,1,0,\ldots,0),\ldots,(0,\ldots,0,1)\bigr)
@@ -412,44 +412,44 @@ nello stesso modo.
   $0$.\\[\baselineskip]
   Su $\mathbb{R}_n[x]$ (ovvero l'insieem dei polinomi reali in $x$ con grado minore o
   uguale a $n$) una base canonica o standard è $(1,x,x^2,\ldots,x^n)$.
-\end{SubDef}
+\end{Ex}
 
 \begin{Thm}{Caratterizzazione di uno spazio vettoriale}
-  Sia $\mathscr{B}=(\vec{v_1},\ldots,\vec{v_n})$ una base di $V$, allora ogni $x\in V$
-  si scrive in un modo unico come combinazione lineare dei vettori $\vec{v_1},\ldots,
-  \vec{v_n}$ come $\vec{v}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ e $(x_1,\ldots,x_n)\in
+  Sia $\mathscr{B}=(\vec{v}_1,\ldots,\vec{v}_n)$ una base di $V$, allora ogni $x\in V$
+  si scrive in un modo unico come combinazione lineare dei vettori $\vec{v}_1,\ldots,
+  \vec{v}_n$ come $\vec{v}=x_1\vec{v}_1+\cdots+x_n\vec{v}_n$ e $(x_1,\ldots,x_n)\in
   \mathbb{K}^n$.\\
-  Viceversa se si hanno $n$ vettori $\{\vec{v_1},\ldots,\vec{v_n}\}$ ed essi sono
+  Viceversa se si hanno $n$ vettori $\{\vec{v}_1,\ldots,\vec{v}_n\}$ ed essi sono
   l'insieme di tutti i vettri in $V$ tali che $\forall \vec{x}\in V$ si ha
-  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$, allora $(\vec{v_1},\ldots,\vec{v_n})$ è
+  $\vec{x}=x_1\vec{v}_1+\cdots+x_n\vec{v}_n$, allora $(\vec{v}_1,\ldots,\vec{v}_n)$ è
   una base di $V$.
 \end{Thm}
 
 \begin{proof}
   Essendo diviso in due punti, dimostriamo il primo. Se $\mathscr{B}$ è una base, allora
-  $\{\vec{v_1},\ldots,\vec{v_n}\}$ è un sistema di generatori. Allora
-  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$. Se la decomposizione non è unica, allora
-  $\vec{x}=x'_1\vec{v_1}+\cdots+x'_n\vec{v_n}$ con $x'_1\neq0$ si può riscrivere come
-  $(x'_1-x_1)\vec{v_1}+\cdots+(x'_n-x_n)\vec{x_n}=\vec{o}$ ma questo è un assurdo in
-  quanto $x'_1-x_1\neq0$ contro l'ipotesi che $\vec{v_1},\ldots,\vec{v_n}$ siano
+  $\{\vec{v}_1,\ldots,\vec{v}_n\}$ è un sistema di generatori. Allora
+  $\vec{x}=x_1\vec{v}_1+\cdots+x_n\vec{v}_n$. Se la decomposizione non è unica, allora
+  $\vec{x}=x'_1\vec{v}_1+\cdots+x'_n\vec{v}_n$ con $x'_1\neq0$ si può riscrivere come
+  $(x'_1-x_1)\vec{v}_1+\cdots+(x'_n-x_n)\vec{x_n}=\vec{o}$ ma questo è un assurdo in
+  quanto $x'_1-x_1\neq0$ contro l'ipotesi che $\vec{v}_1,\ldots,\vec{v}_n$ siano
   linearmente indipendenti.\\
-  Per il secondo punto, sappiamo che $\{\vec{v_1},\ldots,\vec{v_n}\}$ è un sistema di
-  generatori. Se si prende $\lambda_1\vec{v_1}+\cdots+\lambda_n\vec{v_n}=\vec{o}$, lo si
-  scrive in odo unico come combinazione lineare di $\vec{v_1},\ldots,\vec{v_n}$ per
+  Per il secondo punto, sappiamo che $\{\vec{v}_1,\ldots,\vec{v}_n\}$ è un sistema di
+  generatori. Se si prende $\lambda_1\vec{v}_1+\cdots+\lambda_n\vec{v}_n=\vec{o}$, lo si
+  scrive in odo unico come combinazione lineare di $\vec{v}_1,\ldots,\vec{v}_n$ per
   ipotesi. Quindi $\lambda_1=\cdots=\lambda_n=0$.
 \end{proof}
 
 \begin{Def}{Componenti di un vettore}
-  Sia $V$ uno spazio vettoriale su $\mathbb{K}$. Sia $\mathscr{B}=(\vec{v_1},\ldots,
-  \vec{v_n})$ una base fissata di $V$. Allora $\forall \vec{x}\in V$ si ha
-  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ con $x_i\in\mathbb{K}$ e $(x_1,\ldots,x_n)$
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$. Sia $\mathscr{B}=(\vec{v}_1,\ldots,
+  \vec{v}_n)$ una base fissata di $V$. Allora $\forall \vec{x}\in V$ si ha
+  $\vec{x}=x_1\vec{v}_1+\cdots+x_n\vec{v}_n$ con $x_i\in\mathbb{K}$ e $(x_1,\ldots,x_n)$
   sono dette componenti di $\vec{x}$ rispetto alla base $\mathscr{B}$. In simboli si
   scrive ${(\vec{x})}_\mathscr{B}=(x_1,\ldots,x_n)$.
 \end{Def}
 
 \begin{Thm}{Esistenza della base}
   Sia $V$ uno spazio vettoriale su $\mathbb{K}$ finitamente generato e sia
-  $G=\{\vec{w_1},\ldots,\vec{w_l}\}$ un sistema di generatori di $V$. Allora $G$
+  $G=\{\vec{w}_1,\ldots,\vec{w}_l\}$ un sistema di generatori di $V$. Allora $G$
   contiene almeno una base.
 \end{Thm}
 
@@ -457,70 +457,70 @@ nello stesso modo.
   Anhe denominato metodo degli scarti successivi, questa dimostrazione permette di
   trovare una base per uno spazio vettoriale.\\
   Si tolga il vettore nullo, se presente. Allora si può supporre che ogni vettore non
-  sia nullo. \textbf{Primo passo}: Si consideri l'insieme libero $I_1=\{\vec{w_1}\}$. Se
-  ogni vettore $\vec{w_i}$ con $i=1,\ldots,l$ è linearmente dipendente con $\vec{w_1}$
-  allora $\vec{w_1}$ è una base di $V$ perché $\mathscr{L}(\vec{w_1})=V$ e $\{\vec{w_1}\}$
-  è libero. Se invece $\mathscr{L}(\vec{w_1})\neq V$, si considera il primo vettore di
-  $V$ che sia linearmente indipendente con $\vec{w_1}$. Ad esempio
-  $\vec{w_2}\notin\mathscr{L}(\vec{w_1})$. \textbf{Secondo passo}: Si consideri
-  l'insieme libero $I_2=\{\vec{v_1},\vec{w_2}\}$. Si hanno due possibilità, ogni
-  $\vec{w_i}$ con $i\neq1,2$ è combinazione lineare di $\vec{w_1},\vec{w_2}$ e quindi
-  $\{\vec{w_1},\vec{w_2}\}$ è una base di $V$ in quanto
-  $\mathscr{L}(\vec{w_1},\vec{w_2})=V$. In caso contrario, esiste almeno un $\vec{w_i}$
-  con $i\neq1,2$ che è linearmente indipendente con $\vec{w_1},\vec{w_2}$. \textbf{Terzo
-  passo}: Si consideri l'insieme libero $I_3=\{\vec{w_1},\vec{w_2},\vec{w_3}\}$. Si
+  sia nullo. \textbf{Primo passo}: Si consideri l'insieme libero $I_1=\{\vec{w}_1\}$. Se
+  ogni vettore $\vec{w}_i$ con $i=1,\ldots,l$ è linearmente dipendente con $\vec{w}_1$
+  allora $\vec{w}_1$ è una base di $V$ perché $\mathscr{L}(\vec{w}_1)=V$ e $\{\vec{w}_1\}$
+  è libero. Se invece $\mathscr{L}(\vec{w}_1)\neq V$, si considera il primo vettore di
+  $V$ che sia linearmente indipendente con $\vec{w}_1$. Ad esempio
+  $\vec{w}_2\notin\mathscr{L}(\vec{w}_1)$. \textbf{Secondo passo}: Si consideri
+  l'insieme libero $I_2=\{\vec{v}_1,\vec{w}_2\}$. Si hanno due possibilità, ogni
+  $\vec{w}_i$ con $i\neq1,2$ è combinazione lineare di $\vec{w_1},\vec{w_2}$ e quindi
+  $\{\vec{w}_1,\vec{w}_2\}$ è una base di $V$ in quanto
+  $\mathscr{L}(\vec{w}_1,\vec{w}_2)=V$. In caso contrario, esiste almeno un $\vec{w}_i$
+  con $i\neq1,2$ che è linearmente indipendente con $\vec{w}_1,\vec{w}_2$. \textbf{Terzo
+  passo}: Si consideri l'insieme libero $I_3=\{\vec{w}_1,\vec{w}_2,\vec{w}_3\}$. Si
   procede come nel secondo passo.\\
   Il procedimento termina dopo un numero finito di passi, al più $l$. Da $G$ si
   costruisce un insieme libero di generatori di $V$ e quindi una base di $V$.
 \end{proof}
 
-\begin{Thm}{Lemma di Steintz}
-  Sia $\mathscr{B}=(\vec{v_1},\ldots,\vec{v_n})$ una base di $V$ su $\mathbb{K}$ e sia
-  $I=\{\vec{u_1},\ldots,\vec{u_p}\}$ un insieme libero.  Allora $p\leq n$.
+\begin{Thm}{Lemma di Steintz}\label{thm:lemma_steintz}
+  Sia $\mathscr{B}=(\vec{v}_1,\ldots,\vec{v}_n)$ una base di $V$ su $\mathbb{K}$ e sia
+  $I=\{\vec{u}_1,\ldots,\vec{u}_p\}$ un insieme libero. Allora $p\leq n$.
 \end{Thm}
 
 \begin{proof}
-  Siano ${(\vec{u_1})}_\mathscr{B}=(\lambda_1,\ldots,\lambda_n)$ i componenti. $I$ è
-  libero, quindi $\vec{u_1}\neq\vec{o}$. Ciò cimplica che almeno una delle componenti
+  Siano ${(\vec{u}_1)}_\mathscr{B}=(\lambda_1,\ldots,\lambda_n)$ i componenti. $I$ è
+  libero, quindi $\vec{u}_1\neq\vec{o}$. Ciò cimplica che almeno una delle componenti
   $\lambda_i\neq0$. Supponiamo senza perdita di generalità che sia $\lambda_1\neq0$.
   Allora
   \begin{equation}\label{eq:spazio_steintz_dim}
-    \vec{u_1}=\lambda_1\vec{v_1}+\cdots+\lambda_n\vec{v_n}\tag{$\star$}
+    \vec{u}_1=\lambda_1\vec{v}_1+\cdots+\lambda_n\vec{v}_n\tag{$\star$}
   \end{equation}
-  Isolando $\vec{v_1}$ otteniamo
+  Isolando $\vec{v}_1$ otteniamo
   \begin{equation*}
-    \vec{v_1} =
-    \frac{1}{\lambda_1}\vec{u_1}-\frac{\lambda_2}{\lambda_1}\vec{v_2}-\cdots-
-    \frac{\lambda_n}{\lambda_1}\vec{v_n}
+    \vec{v}_1 =
+    \frac{1}{\lambda_1}\vec{u}_1-\frac{\lambda_2}{\lambda_1}\vec{v}_2-\cdots-
+    \frac{\lambda_n}{\lambda_1}\vec{v}_n
   \end{equation*}
-  Quindi $\vec{v_1}\in\mathscr{L}(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$. Si nota che
-  $\{\vec{u_1},\vec{v_2},\ldots,\vec{v_n}\}$ è ancora una base di $V$ in quanto è un
+  Quindi $\vec{v}_1\in\mathscr{L}(\vec{u}_1,\vec{v}_2,\ldots,\vec{v}_n)$. Si nota che
+  $\{\vec{u}_1,\vec{v}_2,\ldots,\vec{v}_n\}$ è ancora una base di $V$ in quanto è un
   sistema di generatori linearmente indipendenti.\\
   Per~\eqref{eq:spazio_steintz_dim}, sappiamo $\forall x\in V$ si ha
-  $\vec{x}=x_1\vec{v_1}+\cdots+x_n\vec{v_n}$ dato che $\mathscr{B}$ è una base di $V$.
+  $\vec{x}=x_1\vec{v}_1+\cdots+x_n\vec{v}_n$ dato che $\mathscr{B}$ è una base di $V$.
   Sostituendo si ottiene
   \begin{equation*}
     \vec{x}=x_1 \left(
-    \frac{1}{\lambda_1}\vec{v_1}-\frac{\lambda_2}{\lambda1}\vec{v_2}-\cdots-
-  \frac{\lambda_n}{\lambda_1}\vec{v_n}\right)+\cdots+x_n\vec{v_n}
+      \frac{1}{\lambda_1}\vec{v}_1-\frac{\lambda_2}{\lambda1}\vec{v}_2-\cdots-
+    \frac{\lambda_n}{\lambda_1}\vec{v}_n\right)+\cdots+x_n\vec{v}_n
   \end{equation*}
-  Quindi $x\in\mathscr{L}(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$. Allora sicuramente
-  $\{\vec{u_1},\vec{v_2},\ldots,\vec{v_n}\}$ è un sistema di generatori di $V$. È anche
-  libero in quanto è formato da $\{\vec{v_2}\,\ldots,\vec{v_n}\}$ che è libero e
-  $\vec{u_1}\notin\mathscr{L}(\vec{v_2},\ldots,\vec{v_n})$. Definiamo
-  $\mathscr{B}_1(\vec{u_1},\vec{v_2},\ldots,\vec{v_n})$.\\
-  Iterando il procedimento considerando $\vec{u_2}\in I$ si scrive $\vec{u_2}$ come
+  Quindi $x\in\mathscr{L}(\vec{u}_1,\vec{v}_2,\ldots,\vec{v}_n)$. Allora sicuramente
+  $\{\vec{u}_1,\vec{v}_2,\ldots,\vec{v}_n\}$ è un sistema di generatori di $V$. È anche
+  libero in quanto è formato da $\{\vec{v}_2\,\ldots,\vec{v}_n\}$ che è libero e
+  $\vec{u}_1\notin\mathscr{L}(\vec{v}_2,\ldots,\vec{v}_n)$. Definiamo
+  $\mathscr{B}_1(\vec{u}_1,\vec{v}_2,\ldots,\vec{v}_n)$.\\
+  Iterando il procedimento considerando $\vec{u}_2\in I$ si scrive $\vec{u}_2$ come
   combinazione lineare di vettori della base $\mathscr{B}_1$.
   \begin{equation*}
-    \vec{u_2}=\gamma_1\vec{u_1}+\gamma_2\vec{v_2}+\cdots+\gamma_n\vec{v_n}
+    \vec{u}_2=\gamma_1\vec{u}_1+\gamma_2\vec{v}_2+\cdots+\gamma_n\vec{v}_n
   \end{equation*}
-  Poiché $\vec{u_2}\neq\vec{o}$, almeno uno dei coefficienti non è nullo. Poiché
-  $\{\vec{u_1},\vec{u_2}\}$ è libero per costruzione, non si può avere $\gamma_1\neq0$ e
+  Poiché $\vec{u}_2\neq\vec{o}$, almeno uno dei coefficienti non è nullo. Poiché
+  $\{\vec{u}_1,\vec{u}_2\}$ è libero per costruzione, non si può avere $\gamma_1\neq0$ e
   $\gamma_2=\cdots=\gamma_n=0$. Si può supporre che $\gamma_2\neq0$. Possiamo scrivere
-  $\vec{v_2}$ come combinazione lineare di
-  $\vec{u_1},\vec{u_2},\vec{v_3},\ldots,\vec{v_n}$ e si prova che
-  $\mathscr{B}_2(\vec{u_1},\vec{u_2},\vec{v_3},\ldots,\vec{v_n})$ è una base di $V$. Si
-  procede poi con $\vec{v_3}$.\\
+  $\vec{v}_2$ come combinazione lineare di
+  $\vec{u}_1,\vec{u}_2,\vec{v}_3,\ldots,\vec{v}_n$ e si prova che
+  $\mathscr{B}_2(\vec{u}_1,\vec{u}_2,\vec{v}_3,\ldots,\vec{v}_n)$ è una base di $V$. Si
+  procede poi con $\vec{v}_3$.\\
   Il procedimento termina se o si sono estrtti tutti i vettori di $I$ e sono stati
   inseriti tutti i vettori di $I$ nella base (ovvero $p\leq n$) oppure si sono estratti
   i vettori di $\mathscr{B}$ e rimangono ancora vettori di $I$ (ovvero
@@ -535,9 +535,176 @@ nello stesso modo.
 \end{SubThm}
 
 \begin{proof}
-  Per assurdo $\mathscr{B}(\vec{v_1},\ldots,\vec{v_n})$ e
-  $\mathscr{B}'(\vec{w_1},\ldots,\vec{w_l})$. Allora se consideriamo $\mathscr{B}$ base,
+  Per assurdo $\mathscr{B}(\vec{v}_1,\ldots,\vec{v}_n)$ e
+  $\mathscr{B}'(\vec{w}_1,\ldots,\vec{w}_l)$. Allora se consideriamo $\mathscr{B}$ base,
   $\mathscr{B}'$ è un insieme libero e quindi $n\geq l$. Se invece consideriamo
   $\mathscr{B}'$ base e $\mathscr{B}$ un insieme libero, si ha $n\leq l$ da cui si
   deduce che $n=l$.
 \end{proof}
+
+\subsection{Dimensione di uno spazio}%
+\label{sub:dimensione_di_uno_spazio}
+
+\begin{Def}{Dimensione}
+  Il numero di vettori di una base di uno spazio vettoriale finitamente generato è pari
+  alla dimensione di $V$. Si indica con $\dim V$. Se si fa riferimento ad un particolare
+  campo si scrive $\dim_{\mathbb{K}}V$.\\
+  Per convenzione $\dim\{\vec{o}\}=0$.
+\end{Def}
+
+\begin{Ex}{Esempi classici}
+  In $\mathbb{R}^n$ la sua dimensione è pari $\dim\mathbb{R}^n=n$ a causa della sua base
+  canonica.\\
+  Si ha che $\dim\mathbb{R}^{m,n}=mn$ sempre per la base canonica.\\
+  $\dim\mathbb{R}_n[x]=n+1$ a causa della sua base canonica.\\
+  $\dim\mathbb{C}=1$ per la sua base canonica che è $(1)$.\\
+  $\dim_\mathbb{R}\mathbb{C}=2$ visto che $z = x+iy$ e la sua base canonica è $(1,i)$.
+\end{Ex}
+
+\begin{Thm}{Proprietà della dimensione di un
+  sottospazio}\label{thm:spazio_dim_sottospazio}
+  Sia $W$ un sottospazio vettoriale di $V$ su $\mathbb{K}$. Allora si ha
+  \begin{enumerate}
+    \item\label{thm:spazio_dim_sottospazio_1} Se $V$ è finitamente generato, anche $W$
+      lo è
+    \item\label{thm:spazio_dim_sottospazio_2} $\dim W\leq\dim V$
+    \item\label{thm:spazio_dim_sottospazio_3} $\dim W = \dim V\iff W = V$
+  \end{enumerate}
+\end{Thm}
+
+\begin{proof}
+  Punto~\ref{thm:spazio_dim_sottospazio_1}. Per assurdo, ipotiziamo che non sia
+  finitamente generato. Se così fosse allora esiste $\vec{w}_1\neq\vec{o}\in W$. Allora si
+  può dire che $\mathscr{L}(\vec{w}_1)\subseteq W$ da cui si può dedurre che
+  $W\notin\mathscr{L}(\vec{w}_1)$. Allora si può dire che esiste un
+  $\vec{w}_2\notin\mathscr{L}(\vec{v}_1)$ da cui si deduce che $\{\vec{w}_1,\vec{w}_2\}$
+  è libero. Se $W=\mathscr{L}(\vec{w}_1,\vec{w}_2)$, allora esiste un $\vec{w}_3\in
+  W\setminus\mathscr{L}(\vec{w_1},\vec{w}_1)$. Procedendo in questo modo si ottiene una
+  successione di vettori ${\{\vec{w}_i\}}_{i\in\mathbb{N}}\subseteq W$ tali che $\forall
+  n\in\mathbb{N}$ si ha $\vec{w}_1,\ldots,\vec{w}_n$ sono linearmente indipendenti. In
+  particolare si ha $n=\dim V+1$ che è un assurdo.\\
+  Punto~\ref{thm:spazio_dim_sottospazio_2}. Si considera la base di $W$,
+  per~\autoref{thm:lemma_steintz} si ha che il sistema $\{\vec{w}_1,\ldots,\vec{w}_n\}$
+  è libero in $V$ e quindi si ha anche che $n\leq\dim V$.\\
+  Punto~\ref{thm:spazio_dim_sottospazio_3}. Segue direttamente dal
+  punto~\ref{thm:spazio_dim_sottospazio_2} in quanto essendo un sottospazio, non può
+  avere un numero di elementi maggiore e quindi, se le dimensioni sono uguali allora per
+  forza anche gli spazi devono esserlo.
+\end{proof}
+
+\begin{Thm}{Relazione tra base ed insieme libero}
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$ tale che $\dim V=n$. Allora
+  \begin{enumerate}
+    \item\label{thm:spazio_dim_base_libero_1} Un insieme libero
+      $\{\vec{v}_1,\ldots,\vec{v}_n\}$ di vettori di $V$ forma anche una base
+    \item\label{thm:spazio_dim_base_libero_2} Un sistema di generatori
+      $\{\vec{v}_1,\ldots,\vec{v}_n\}$ di vettori di $V$ forma una base
+  \end{enumerate}
+\end{Thm}
+
+\begin{proof}
+  Punto~\ref{thm:spazio_dim_base_libero_1}. Se si considera
+  $\dim\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_n)=n$, allora si può dire che
+  $\mathscr{L}(\vec{v}_1,\ldots,\vec{v}_n)=V$ per~\autoref{thm:spazio_dim_sottospazio}.
+  Allora si ha che $\{\vec{v}_1,\ldots,\vec{v}_n\}$ è anche un sistema di generatori e
+  quindi forma una base di $V$.\\
+  Punto~\ref{thm:spazio_dim_base_libero_2}. Si può utilizzare il metodo degli scarti
+  successivi per ottenere da $\{\vec{v}_1,\ldots,\vec{v}_n\}$ una base. Poiché $\dim
+  V=n$ che è anche $\abs{\{\vec{v}_1\ldots,\vec{v}_n}\}$ sicuramente è una base di $V$
+  in quanto non si possono scartare vettori.
+\end{proof}
+
+\begin{Ex}{Esempi di dimensioni di spazi vettoriali conosciuti}
+  Preso il sottospazio delle matrici diagonali $\mathscr{D}(\mathbb{R}^{n,n})$, sia ha
+  che la sua dimensione è $\dim\mathscr{D}=n$ in quanto la sua base dipende da una
+  variabile (ovvero il posto in cui si inserisce $1$ sulla diagonale).\\
+  Per le matrici triangolari superiori (o inferiori) $\tau(\mathbb{R}^{n,n})$ si ha che
+  una generica matrice si scrive come
+  \begin{equation*}
+    \begin{pmatrix}
+      a_{11} & a_{12} & \cdots & a_{1n}\\
+      0 & a_{22} & \cdots & \vdots\\
+      \vdots & 0 & \ddots & \vdots\\
+      0 & 0 & \cdots & a_{nn}
+    \end{pmatrix}
+  \end{equation*}
+  Si nota come questa dipenda da $\frac{n(n+1)}{2}$ elementi ($1$ nell'angolo in alto a
+  destra, $2$ scendendo e così via fino ad ottenere $1+2+\cdots+n$). Questo implica che
+  la base abbia $\frac{n(n+1)}{2}$ elementi e quindi $\dim\tau = \frac{n(n+1)}{2}$.\\
+  Per le matrici simmetriche e antisimmetriche, si ha una situazione simile a quella
+  delle matrici triangolari. Infatti si ha che ci sono $\frac{n(n+1)}{2}$ elementi a cui
+  si deve sottrarre la diagonale che è tutta nulla. E quindi
+  $\dim\mathscr{A}=\dim\mathscr{S}=\frac{n(n-1)}{2}$.\\
+  Per lo spazio $W=\{A\in\mathbb{R}^{n,n}\Setsuchthat \tr A=0\}$ si ha che ci sono $n^2$
+  elementi che però dipendono gli uni dagli altri, e quindi alla fine si ottiene $\dim
+  W=n^2-1$.
+\end{Ex}
+
+\begin{Thm}{Teorema del completamento della base}
+  Sia $V$ uno spazio vettoriale su $\mathbb{K}$ tale che $\dim V=n$, sia
+  $\mathscr{B}=(\vec{v}_1,\ldots,\vec{v}_n)$ una base e sia
+  $I=\{\vec{a}_1,\ldots,\vec{a}_l\}\subseteq V$ un insieme libero. Allora esiste una
+  base $\mathscr{B}'$ tale che contenga tutti i vettori di $I$ e $n-l$ vettori di
+  $\mathscr{B}$.
+\end{Thm}
+
+\begin{proof}
+  Si sia che $\mathscr{L}(\vec{a}_1,\ldots,\vec{a}_l,\vec{v}_1,\ldots,\vec{v}_n)=V$
+  perché $\{\vec{v}_1,\ldots\vec{v}_n\}$ è un sistema di generatori. Allora anche
+  $\{\vec{a}_1,\ldots,\vec{a}_l,\vec{v}_1,\ldots,\vec{v}_n\}$ è un sistema di generatori
+  di $V$. Con il metodo degli scarti successivi si può estrarre una base partendo da
+  $\{\vec{a}_1\}$ e cosi via.
+\end{proof}
+
+\subsection{Intersezione e somma di sottospazi vettoriali}%
+\label{sub:intersezione_e_somma_di_sottospazi_vettoriali}
+
+\begin{Def}{Intersezione}
+  Dati $W_1,W_2$ sottospazi vettoriali di $V$ su $\mathbb{K}$, si ha
+  \begin{equation*}
+    W_1\cap W_2\bydef\{\vec{w}\in W_1\Setsuchthat \vec{w}\in W_2\}
+  \end{equation*}
+  che a sua volta è un sottospazio vettoriale.
+\end{Def}
+
+\begin{Def}{Somma}
+  Dati $W_1,W_2$ sottospazi vettoriali di $V$ su $\mathbb{K}$, si ha
+  \begin{equation*}
+    W_1+W_2\bydef\{\vec{x}_1+\vec{x}_2\Setsuchthat \vec{x}_1\in W_1,\,\vec{x}_2\in W_2\}
+  \end{equation*}
+\end{Def}
+
+\begin{Thm}{Proprietà della somma}
+  La sommma gode delle seguenti proprietà:
+  \begin{enumerate}
+    \item\label{thm:spazio_somma_1} La somma di sottospazi vettoriali è a sua volta un
+      sottospazio
+    \item\label{thm:spazio_somma_2} La somma è il più piccolo sottospazio ettoriale di
+      $V$ che contiene sia $W_1$ che $W_2$.
+  \end{enumerate}
+\end{Thm}
+
+\begin{proof}
+  Punto~\ref{thm:spazio_somma_1}. È da dimstrare che $\forall\lambda,\mu\in\mathbb{K},\,
+  \forall\vec{x},\vec{y}\in W_1+W_2$ si ha $\lambda\vec{x}+\mu\vec{y}\in W_1+W_2$. Per
+  definizione di somma si può scrivere $\vec{x}=\vec{x}_1+\vec{x}_2$ con $\vec{x}_i\in
+  W_i$ e $\vec{y}=\vec{y}_1+\vec{y}_2$ con $\vec{y}_i\in W_i$. A questo punto
+  \begin{equation*}
+    \lambda\vec{x}+\mu\vec{y}=\lambda(\vec{x}_1+\vec{x}_2)+\mu(\vec{y}_1,\vec{y}_2) =
+    \overbrace{\lambda\vec{x}_1+\mu\vec{y}_1}^{\mathclap{\in
+    W_1}}+\underbrace{\lambda\vec{x}_2+\mu\vec{y}_2}_{\mathclap{\in W_2}}\in W_1+W_2
+  \end{equation*}
+  Punto~\ref{thm:spazio_somma_2}. Se $W$ è sottospazio vettoriale, allora $W_1\subseteq
+  W_2\subseteq W$ e per forza $W_1+W_2\subseteq W$ in quanto $W$ contiene tutte le
+  combinazioni lineari di $W_1$ e $W_2$.
+\end{proof}
+
+\begin{SubDef}{Generalizzazione}
+  Siano $W_1,\ldots,W_n$ sottospazi vettoriali di $V$ su $\mathbb{K}$. Allora
+  \begin{equation*}
+    W_1+\cdots+W_2\bydef\{\vec{w}_1+\cdots+\vec{w}_n\Setsuchthat \vec{w}_i\in
+    W_i,\,i=1,\ldots,n\}
+  \end{equation*}
+  Si ha anche che $W_1+\cdots+W_n$ è il più piccolo sottospazio vettoriale che contiene
+  tutti $W_1,\ldots,W_n$.
+\end{SubDef}
